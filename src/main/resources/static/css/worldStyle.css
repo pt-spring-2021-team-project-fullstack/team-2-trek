@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    line-height: 1.618em;
+    max-height: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.container {
+    margin: 1rem auto;
+    max-width: 60%;
+    width: 90%;
+}
+
