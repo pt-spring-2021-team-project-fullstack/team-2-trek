@@ -1,11 +1,7 @@
 package com.team2.worldtrekking;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -16,7 +12,7 @@ public class Trek {
     @GeneratedValue
     private Long id;
 
-    private String name;
+    private String title;
     private String type;
     private String difficulty;
     private String description;
@@ -24,14 +20,15 @@ public class Trek {
     private String imageUrl;
     private Boolean bookNow;
 
-    private Collection<Continent> continents;
+    @ManyToOne
+    private Continent continent;
 
     public Long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
     public String getType() {
@@ -46,8 +43,8 @@ public class Trek {
         return description;
     }
 
-    public Collection<Continent> getContinents() {
-        return continents;
+    public Continent getContinent() {
+        return continent;
     }
 
 
@@ -63,18 +60,18 @@ public class Trek {
         return bookNow;
     }
 
-    public Trek(Long id, String name, String type, String difficulty, String description,
-                 String price, String imageUrl, Boolean bookNow, Continent... continents){
+    public Trek(Long id, String title, String type, String difficulty, String description,
+                 String price, String imageUrl, Boolean bookNow, Continent continent){
 
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.type = type;
         this.difficulty = difficulty;
         this.description = description;
         this.price = price;
         this.imageUrl = imageUrl;
         this.bookNow = bookNow;
-        this.continents = new ArrayList<>(Arrays.asList(continents));
+        this.continent = continent;
     }
 
     @Override

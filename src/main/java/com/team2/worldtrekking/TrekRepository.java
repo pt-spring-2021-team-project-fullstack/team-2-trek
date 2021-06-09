@@ -1,3 +1,5 @@
+package com.team2.worldtrekking;
+
 import com.team2.worldtrekking.Trek;
 import org.springframework.data.repository.CrudRepository;
 
