@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>World Trekking - Continents</title>
+</head>
+<body>
+<div class="container">
+    <header>
+        Continents
+    </header>
+    <main>
+            <div th:each="continent: ${continentModel}">
+                <a th:href="@{/continent(id=${continent.id})}">
+                    <img th:src="${continent.imageUrl}"></a>
+                <p th:text="${continent.title}"></p>
+        </div>
+    </main>
+</div>
+</body>
+</html>
