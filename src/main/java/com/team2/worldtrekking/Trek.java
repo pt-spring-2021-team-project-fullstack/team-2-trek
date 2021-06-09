@@ -14,19 +14,21 @@ public class Trek {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private String id;
 
     private String name;
-    private String type;
+//    private String type;
     private String difficulty;
     private String description;
     private String price;
-    private String imageUrl;
-    private Boolean bookNow;
+//    private String imageUrl; //put this back in once images are in place
+//    private Boolean bookNow;
 
-    private Collection<Continent> continents;
+    private String continent; // remove this once continent class is built out
 
-    public Long getId() {
+//    private Collection<Continent> continents; put this back in once Continent class is built out & update populator
+
+    public String getId() {
         return id;
     }
 
@@ -34,9 +36,9 @@ public class Trek {
         return name;
     }
 
-    public String getType() {
-        return type;
-    }
+//    public String getType() {
+//        return type;
+//    }
 
     public String getDifficulty() {
         return difficulty;
@@ -46,8 +48,12 @@ public class Trek {
         return description;
     }
 
-    public Collection<Continent> getContinents() {
-        return continents;
+//    public Collection<Continent> getContinents() { // add back once Continent is built out & populator adjusted
+//        return continents;
+//    }
+
+    public String getContinent() { //remove once Continent is built out
+        return continent;
     }
 
 
@@ -55,26 +61,25 @@ public class Trek {
         return price;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
+//    public String getImageUrl() {
+//        return imageUrl;
+//    }
 
-    public Boolean getBookNow() {
-        return bookNow;
-    }
 
-    public Trek(Long id, String name, String type, String difficulty, String description,
-                 String price, String imageUrl, Boolean bookNow, Continent... continents){
+//    public Trek(Long id, String name, String type, String difficulty, String description,
+//                 String price, String imageUrl, Continent... continents){     // reinstate this once Continent, type data, and imaages are in place
+
+    public Trek(String id, String name, String difficulty, String description,
+                String price, String continent){
 
         this.id = id;
         this.name = name;
-        this.type = type;
+//        this.type = type;
         this.difficulty = difficulty;
         this.description = description;
         this.price = price;
-        this.imageUrl = imageUrl;
-        this.bookNow = bookNow;
-        this.continents = new ArrayList<>(Arrays.asList(continents));
+//        this.imageUrl = imageUrl;//        this.continents = new ArrayList<>(Arrays.asList(continents));
+        this.continent = continent;
     }
 
     @Override
