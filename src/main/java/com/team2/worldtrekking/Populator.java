@@ -1,6 +1,7 @@
 package com.team2.worldtrekking;
 
 import com.team2.worldtrekking.models.Continent;
+import com.team2.worldtrekking.models.Region;
 import com.team2.worldtrekking.models.Trek;
 import com.team2.worldtrekking.repositories.ContinentRepository;
 import com.team2.worldtrekking.repositories.RegionRepository;
@@ -38,6 +39,50 @@ public class Populator {
         continentRepo.save(Europe);
         continentRepo.save(NorthAmerica);
 
+        Region MidWest = new Region(18L, "MidWest", NorthAmerica);
+        Region Atlantic = new Region(7L, "Atlantic", NorthAmerica);
+        Region Pacific = new Region(14L, "Pacific", NorthAmerica);
+        Region Himalaya = new Region(1L, "Himalaya", Asia);
+        Region Lapland = new Region(2L, "Lapland", Europe);
+        Region FrenchSpeakingSwitzerland = new Region(3L, "French Speaking Region of Switzerland", Europe);
+        Region EasternMali = new Region(4L, "Eastern Mali", Africa);
+        Region Patagonia = new Region(5L, "Patagonia", SouthAmerica);
+        Region Fiordland = new Region(6L, "Fiordland", Australia);
+        Region Galicia = new Region(8L, "Galicia", Europe);
+        Region CostaNorte = new Region(9L, "Costa Norte", SouthAmerica);
+        Region SacredValley = new Region(10L, "Sacred Valley", SouthAmerica);
+        Region Magallanes = new Region(11L, "Magallanes", SouthAmerica);
+        Region Tibet = new Region(12L, "Tibet", Asia);
+        Region Maghreb = new Region(13L, "Magrheb", Africa);
+        Region NorthWest = new Region(15L, "NorthWest", Australia);
+        Region WesternEurope = new Region(16L, "Western Europe", Europe);
+        Region Highlands = new Region(17L, "Highlands", Europe);
+        Region Guayana = new Region(18L, "Guayana", SouthAmerica);
+        Region AfricaGreatLakes = new Region(18L, "Africa Great Lakes", Africa);
+
+
+        regionRepo.save(Himalaya);
+        regionRepo.save(Lapland);
+        regionRepo.save(FrenchSpeakingSwitzerland);
+        regionRepo.save(EasternMali);
+        regionRepo.save(Patagonia);
+        regionRepo.save(Fiordland);
+        regionRepo.save(Atlantic);
+        regionRepo.save(Galicia);
+        regionRepo.save(CostaNorte);
+        regionRepo.save(SacredValley);
+        regionRepo.save(Magallanes);
+        regionRepo.save(Tibet);
+        regionRepo.save(Maghreb);
+        regionRepo.save(Pacific);
+        regionRepo.save(NorthWest);
+        regionRepo.save(WesternEurope);
+        regionRepo.save(Highlands);
+        regionRepo.save(Guayana);
+        regionRepo.save(AfricaGreatLakes);
+        regionRepo.save(MidWest);
+
+
         String description1 = "This ancient trade route has been open to foreign trekkers since 1977 and is one of the most beautiful hikes on the planet. The total length of the route varies between 100 and145 miles, and takes anywhere from 15 to 25 days to complete depending on your speed. The highlights include reaching an altitude of almost 18,000 feet at Thorung La summit pass and watching the sun rise over towering peaks at Poon Hill. Leave your camping gear at home; there are cheap hotels all along the route.";
         String description2 = "The King's Trail (Kungsleden) in northern Sweden, is probably is one of the world’s most famous hiking trails. The trail is approximately 440 kilometers (270 miles) long, between Abisko in the north and Hemavan in the south and it passes through four national parks: Abisko, Stora Sjöfallet, Sarek and Pieljekaise.";
         String description3 = "Leading from Chamonix in France through the southern Valais to Zermatt in Switzerland, the Haute Route traverses some of the highest and most scenic country accessible to walkers anywhere in the Alps. The summer Haute Route walk (which takes a different course than the more famous winter ski-touring route) takes around two weeks to complete. It mainly involves \"pass hopping\" and demands a high level of fitness, with every section containing a high huff factor.";
@@ -63,30 +108,30 @@ public class Populator {
         String description23 = "Trekking this route is not for the faint of heart, or lungs. This high-altitude ball-buster crosses 11 passes over 14,000 feet along the Tibet-Bhutan border. Along the way you’ll visit magical Buddhist monasteries clinging to the sides of cliffs and pass through secluded villages full of windblown smiles. It takes about 24 days to complete, and the window of perfect weather is very small, mainly in October.";
         String description24 = "This demanding, 15-day (168km) slog through Corsica is legendary for the diversity of landscapes it traverses. There are forests, granite moonscapes, windswept craters, glacial lakes, torrents, peat bogs, snow-capped peaks, plains and névés (stretches of ice formed from snow). But it does not come easy: the path is rocky and sometimes steep, and includes rickety bridges and slippery rock faces - all part of the fun. Created in 1972, the GR20 links Calenzana, in the Balagne, with Conca, north of Porto Vecchio.";
 
-        Trek trek1 = new Trek(1, "Annapurna Circut", "Moderate", description1, "1000", "",true, SouthAmerica, "");
-        Trek trek2 = new Trek(2, "Kungsleden (The King's Trail)", "Moderate", description2, "2000", "",true,"", "");
-        Trek trek3 = new Trek(3, "Haute Route", "Difficult", description3, "2400", "Europe",true,"", "");
-        Trek trek4 = new Trek(4, "Pays Dogon", "Easy", description4, "1700", "Africa",true,"", "");
-        Trek trek5 = new Trek(5, "Fitzroy Trek", "Easy", description5, "2300", "South America",true,"", "");
-        Trek trek6 = new Trek(6, "Routeburn Track", "Easy", description6, "1700", "Australasia",true,"", "");
-        Trek trek7 = new Trek(7, "Long Range Traverse", "Difficult", description7, "2600", "North America",true,"", "");
-        Trek trek8 = new Trek(8, "Camino de Santiago", "Easy", description8, "1500", "Europe",true,"", "");
-        Trek trek9 = new Trek(9, "Lost City of Teyuna", "Moderate", ""description9, "2100",true,"", "");
-        Trek trek10 = new Trek(10, "Inca Trail", "Moderate", description10, "1900", "",true,"", "");
-        Trek trek11 = new Trek(11, "Torres del Paine", "Moderate", description11, "2200", "",true,"", "");
-        Trek trek12 = new Trek(12, "Mount Kailash", "Moderate", description12, "2900", "",true,"", "");
-        Trek trek13 = new Trek(13, "Toukbal Circut", "Moderate", description13, "2500", "",true,"", "");
-        Trek trek14 = new Trek(14, "John Muir Trail", "Moderate", description14, "1400", "",true,"", "");
-        Trek trek15 = new Trek(15, "Overland Track", "Moderate", description15, "1700", "",true,"", "");
-        Trek trek16 = new Trek(16, "Tour du Mont Blanc", "Moderate", description16, "1900", "",true,"", "");
-        Trek trek17 = new Trek(17, "Laugavegur", "Moderate", description17, "2100", "",true,"", "");
-        Trek trek18 = new Trek(18, "Mount Roraima", "Moderate", description18, "2200", "",true,"", "");
-        Trek trek19 = new Trek(19, "Kilimanjaro", "Strenuous", description19, "2300", "",true,"", "");
-        Trek trek20 = new Trek(20, "Appalachian Trail", "Strenuous", description20, "1800", "",true,"", "");
-        Trek trek21 = new Trek(21, "Everest Base Camp Trek", "Difficult", description21, "2500", "",true,"", "");
-        Trek trek22 = new Trek(22, "Baltoro Glacier and K2", "Difficult", description22, "2800", "",true,"", "");
-        Trek trek23 = new Trek(23, "Snowman Trek", "Difficult", description23, "2400", "",true,"", "");
-        Trek trek24 = new Trek(24, "GR20", "Difficult", description24, "2300", "",true,"", "");
+        Trek trek1 = new Trek(1L, "Annapurna Circut", "Moderate", description1, "1000", "",true, Asia, "", Himalaya);
+        Trek trek2 = new Trek(2L, "Kungsleden (The King's Trail)", "Moderate", description2, "2000", "",true, Europe, "", Lapland);
+        Trek trek3 = new Trek(3L, "Haute Route", "Difficult", description3, "2400", "",true, Europe, "", FrenchSpeakingSwitzerland);
+        Trek trek4 = new Trek(4L, "Pays Dogon", "Easy", description4, "1700", "",true, Africa, "", EasternMali);
+        Trek trek5 = new Trek(5L, "Fitzroy Trek", "Easy", description5, "2300", "",true, SouthAmerica, "", Patagonia);
+        Trek trek6 = new Trek(6L, "Routeburn Track", "Easy", description6, "1700", "",true, Australia, "", Fiordland);
+        Trek trek7 = new Trek(7L, "Long Range Traverse", "Difficult", description7, "2600", "",true, NorthAmerica, "", Atlantic);
+        Trek trek8 = new Trek(8L, "Camino de Santiago", "Easy", description8, "1500", "",true, Europe,"", Galicia);
+        Trek trek9 = new Trek(9L, "Lost City of Teyuna", "Moderate", description9, "2100","",true, SouthAmerica, "", CostaNorte);
+        Trek trek10 = new Trek(10L, "Inca Trail", "Moderate", description10, "1900", "",true, SouthAmerica, "", SacredValley);
+        Trek trek11 = new Trek(11L, "Torres del Paine", "Moderate", description11, "2200", "",true, SouthAmerica, "", Magallanes);
+        Trek trek12 = new Trek(12L, "Mount Kailash", "Moderate", description12, "2900", "",true, Asia, "", Tibet);
+        Trek trek13 = new Trek(13L, "Toukbal Circut", "Moderate", description13, "2500", "",true, Africa, "", Maghreb);
+        Trek trek14 = new Trek(14L, "John Muir Trail", "Moderate", description14, "1400", "",true, NorthAmerica, "", Pacific);
+        Trek trek15 = new Trek(15L, "Overland Track", "Moderate", description15, "1700", "",true, Australia, "", NorthWest);
+        Trek trek16 = new Trek(16L, "Tour du Mont Blanc", "Moderate", description16, "1900", "",true, Europe, "", WesternEurope);
+        Trek trek17 = new Trek(17L, "Laugavegur", "Moderate", description17, "2100", "",true, Europe, "", Highlands);
+        Trek trek18 = new Trek(18L, "Mount Roraima", "Moderate", description18, "2200", "",true,SouthAmerica, "", Guayana);
+        Trek trek19 = new Trek(19L, "Kilimanjaro", "Strenuous", description19, "2300", "",true, Africa, "", AfricaGreatLakes);
+        Trek trek20 = new Trek(20L, "Appalachian Trail", "Strenuous", description20, "1800", "",true,NorthAmerica, "", MidWest);
+        Trek trek21 = new Trek(21L, "Everest Base Camp Trek", "Difficult", description21, "2500", "",true,"", "");
+        Trek trek22 = new Trek(22L, "Baltoro Glacier and K2", "Difficult", description22, "2800", "",true,"", "");
+        Trek trek23 = new Trek(23L, "Snowman Trek", "Difficult", description23, "2400", "",true,"", "");
+        Trek trek24 = new Trek(24L, "GR20", "Difficult", description24, "2300", "",true,"", "");
 
         trekRepo.save(trek1);
         trekRepo.save(trek2);

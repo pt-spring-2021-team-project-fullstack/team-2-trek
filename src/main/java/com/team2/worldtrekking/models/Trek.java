@@ -19,6 +19,7 @@ public class Trek {
     private String price;
     private String imageUrl;
     private Boolean bookNow;
+    private String region;
 
     @ManyToOne
     private Continent continent;
@@ -47,6 +48,9 @@ public class Trek {
         return continent;
     }
 
+    public String getRegion() {
+        return region;
+    }
 
     public String getPrice() {
         return price;
@@ -61,7 +65,7 @@ public class Trek {
     }
 
     public Trek(Long id, String title, String difficulty, String description,
-                 String price, String imageUrl, Boolean bookNow, Continent continent, String type){
+                 String price, String imageUrl, Boolean bookNow, Continent continent, String type, Region region){
 
         this.id = id;
         this.title = title;
@@ -72,6 +76,7 @@ public class Trek {
         this.imageUrl = imageUrl;
         this.bookNow = bookNow;
         this.continent = continent;
+        this.region = region;
     }
 
     @Override

@@ -1,10 +1,6 @@
 package com.team2.worldtrekking.models;
 
-import com.team2.worldtrekking.models.Trek;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -15,9 +11,10 @@ public class Region {
     @GeneratedValue
     private Long id;
     private String name;
-    private String continent;
+    private String title;
+    private Continent continent;
     @OneToMany
-    private Collection<Trek> trekking;
+    private Collection<Trek> treks;
 
     public Long getId() {
         return id;
@@ -27,15 +24,17 @@ public class Region {
         return name;
     }
 
-    public String getContinent() {
+    public String getTrekTitle() { return title; }
+
+    public Continent getContinent() {
         return continent;
     }
 
     public Collection<Trek> getTrekking() {
-        return trekking;
+        return treks;
     }
 
-    public Region(long id, Trek trekking, String name, String continent) {
+    public Region(long id, /*Trek trekking,*/ String name, Continent continent) {
         this.id = id;
         this.name = name;
         this.continent = continent;
