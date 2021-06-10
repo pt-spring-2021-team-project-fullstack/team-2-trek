@@ -12,7 +12,7 @@
 
     <main>
         <div th:each="trek: ${trekModel}">
-            <a th:href="@{/trek(id=${continent.id})}">
+            <a th:href="@{/trek(id=${trek.id})}">
                 <img th:src="${trek.imageUrl}"></a>
             <p th:text="${trek.title}"></p>
         </div>

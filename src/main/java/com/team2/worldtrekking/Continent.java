@@ -36,7 +36,7 @@ public class Continent {
         return region;
     }
 
-    public Continent(Long id, String name,  String region, String imageUrl){
+    public Continent(Long id, String title,  String region, String imageUrl){
         this.id = id;
         this.title = title;
         this.region = region;
