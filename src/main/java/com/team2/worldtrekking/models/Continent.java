@@ -1,4 +1,4 @@
-package com.team2.worldtrekking;
+package com.team2.worldtrekking.models;
 
 
 

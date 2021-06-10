@@ -1,5 +1,6 @@
-package com.team2.worldtrekking;
+package com.team2.worldtrekking.controllers;
 
+import com.team2.worldtrekking.repositories.ContinentRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

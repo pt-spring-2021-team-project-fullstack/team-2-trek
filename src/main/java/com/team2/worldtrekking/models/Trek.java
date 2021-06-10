@@ -1,4 +1,4 @@
-package com.team2.worldtrekking;
+package com.team2.worldtrekking.models;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
@@ -60,8 +60,8 @@ public class Trek {
         return bookNow;
     }
 
-    public Trek(Long id, String title, String type, String difficulty, String description,
-                 String price, String imageUrl, Boolean bookNow, Continent continent){
+    public Trek(Long id, String title, String difficulty, String description,
+                 String price, String imageUrl, Boolean bookNow, Continent continent, String type){
 
         this.id = id;
         this.title = title;
