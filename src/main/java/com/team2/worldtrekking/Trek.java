@@ -1,5 +1,8 @@
 package com.team2.worldtrekking;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 import javax.persistence.Entity;
 import javax.persistence.*;
 import java.util.Objects;
@@ -13,14 +16,16 @@ public class Trek {
     private Long id;
 
     private String title;
-    private String type;
+//    private String type;
     private String difficulty;
+    @Lob
     private String description;
     private String price;
     private String imageUrl;
-    private Boolean bookNow;
+//    private Boolean bookNow;
 
     @ManyToOne
+    @NotFound(action = NotFoundAction.IGNORE)
     private Continent continent;
 
     public Long getId() {
@@ -31,9 +36,9 @@ public class Trek {
         return title;
     }
 
-    public String getType() {
-        return type;
-    }
+//    public String getType() {
+//        return type;
+//    }
 
     public String getDifficulty() {
         return difficulty;
@@ -56,21 +61,23 @@ public class Trek {
         return imageUrl;
     }
 
-    public Boolean getBookNow() {
-        return bookNow;
-    }
+//    public Boolean getBookNow() {
+//        return bookNow;
+//    }
 
-    public Trek(Long id, String title, String type, String difficulty, String description,
-                 String price, String imageUrl, Boolean bookNow, Continent continent){
+    public Trek(){}
+
+    public Trek(Long id, String title, String difficulty, String description,
+                 String price, String imageUrl, Continent continent){
 
         this.id = id;
         this.title = title;
-        this.type = type;
+//        this.type = type;
         this.difficulty = difficulty;
         this.description = description;
         this.price = price;
         this.imageUrl = imageUrl;
-        this.bookNow = bookNow;
+//        this.bookNow = bookNow;
         this.continent = continent;
     }
 
