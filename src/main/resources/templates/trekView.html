@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>World Trekking - Treks</title>
+    <style>
+        #image{
+        width: 75%;
+        height: auto;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -13,7 +19,7 @@
     <main>
         <div th:each="trek: ${trekModel}">
             <a th:href="@{/trek(id=${trek.id})}">
-                <img th:src="${trek.imageUrl}"></a>
+                <img id="image" th:src="${trek.imageUrl}"></a>
             <p th:text="${trek.title}"></p>
         </div>
     </main>

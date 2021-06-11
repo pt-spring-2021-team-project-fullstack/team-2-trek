@@ -17,7 +17,7 @@ public class Continent {
     private  String region;
     private  String imageUrl;
 
-    @OneToMany(mappedBy = "continent")
+    @OneToMany(mappedBy="continent")
     public Collection<Trek> treks;
 
     public Collection<Trek> getTreks() {
@@ -32,6 +32,10 @@ public class Continent {
         return title;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
     public String getRegion() {
         return region;
     }
@@ -40,6 +44,7 @@ public class Continent {
         this.id = id;
         this.title = title;
         this.region = region;
+        this.imageUrl = imageUrl;
     }
     public Continent(){}
 
