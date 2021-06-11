@@ -11,7 +11,6 @@ public class Continent {
 
     @Id
     @GeneratedValue
-    private  Long id;
     private  String title;
     private  String region;
     private  String imageUrl;
@@ -35,8 +34,7 @@ public class Continent {
         return region;
     }
 
-    public Continent(Long id, String name,  String region, String imageUrl){
-        this.id = id;
+    public Continent(String name,  String region, String imageUrl){
         this.title = title;
         this.region = region;
     }

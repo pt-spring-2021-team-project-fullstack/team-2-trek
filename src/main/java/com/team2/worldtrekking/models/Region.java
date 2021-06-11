@@ -33,7 +33,7 @@ public class Region {
         return treks;
     }
 
-    public Region(long id, /*Trek trekking,*/ String name, Continent continent) {
+    public Region(String name, Continent continent) {
         this.name = name;
         this.continent = continent;
     }
