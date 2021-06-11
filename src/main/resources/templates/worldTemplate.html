@@ -24,31 +24,42 @@
     </div>
 
     <main>
+        <p>CONTINENTS</p>
         <div th:each="continent: ${continentModel}">
             <a th:href="@{/continent(id=${continent.id})}">
                 <img th:src="${continent.imageUrl}"></a>
             <p th:text="${continent.title}"></p>
         </div>
+
+        <p>REGIONS</p>
         <div th:each="region: ${regionModel}">
             <a th:href="@{/region(id=${region.id})}">
                 <img th:src="${region.imageUrl}"></a>
             <p th:text="${region.title}"></p>
         </div>
+
+        <p>TREKS</p>
         <div th:each="trek: ${trekModel}">
             <a th:href="@{/trek(id=${trek.id})}">
                 <img th:src="${trek.imageUrl}"></a>
             <p th:text="${trek.title}"></p>
         </div>
+
+        <p>TYPES OF TREKS</p>
         <div th:each="difficulty: ${difficultyModel}">
             <a th:href="@{/difficulty(id=${difficulty.id})}">
                 <img th:src="${difficulty.imageUrl}"></a>
             <p th:text="${difficulty.title}"></p>
         </div>
-        <div th:each="about: ${aboutModel}">
-            <a th:href="@{/about(id=${about.id})}">
-                <img th:src="${about.imageUrl}"></a>
-            <p th:text="${about.title}"></p>
-        </div>
+
+        <p>WHY CHOOSE US?</p>
+        <p>OUR WORLD TREKKING COMPANY</p>
+        <article>paragraph here</article>
+        <p>OUR TREKKING ADVENTURES</p>
+        <article>paragraph here</article>
+        <p>OUR TEAM</p>
+        <article>paragraph here</article>
+        <button id="aboutUs"><a th:href="aboutUs">About Us</a></button>
     </main>
 </div>
 
