@@ -67,7 +67,7 @@ public class Trek {
 
     public Trek(){}
 
-    public Trek(String title, String difficulty, String description,
+    public Trek( String title, String difficulty, String description,
                  String price, String imageUrl, Continent continent){
 
         this.title = title;

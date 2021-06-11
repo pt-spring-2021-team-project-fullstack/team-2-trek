@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>World Trekking - Continents</title>
+    <link rel="stylesheet" type="text/css" href="./css/continentStyle.css">
 </head>
 <body>
 <div class="container">
     <header>
-        Continents
+        Most Iconic Treks by Continent.
+        <p>Deciding the best trekking and most iconic treks by continents can be difficult and time consuming. Let us
+        help you narrow down your choices on the treks by continents. We have check them out ourselves and would love
+        you to follow us and be inspired to put your boots on in joining us on the trail.</p>
     </header>
     <main>
             <div th:each="continent: ${continentModel}">
@@ -17,5 +21,10 @@
         </div>
     </main>
 </div>
+
+<footer>
+    <small>&copy World Trekking 2021</small>
+</footer>
+
 </body>
 </html>
