@@ -1,5 +1,8 @@
 package com.team2.worldtrekking;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 import javax.persistence.Entity;
 import javax.persistence.*;
 import java.util.Objects;
@@ -15,6 +18,7 @@ public class Trek {
     private String title;
 //    private String type;
     private String difficulty;
+    @Lob
     private String description;
     private String price;
     private String imageUrl;
@@ -57,6 +61,14 @@ public class Trek {
 
     public Trek(String title, String difficulty, String description,
                 String price, String imageUrl, Continent continent){
+
+    public Trek(Long id, String title, String difficulty, String description,
+                 String price, String imageUrl, Continent continent){
+
+    public Trek(){}
+
+    public Trek(String title, String difficulty, String description,
+                 String price, String imageUrl, Continent continent){
 
         this.title = title;
 //        this.type = type;
