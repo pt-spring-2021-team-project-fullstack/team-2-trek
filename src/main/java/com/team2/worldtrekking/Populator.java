@@ -60,7 +60,6 @@ public class Populator {
         Region Guayana = new Region(18L, "Guayana", SouthAmerica);
         Region AfricaGreatLakes = new Region(18L, "Africa Great Lakes", Africa);
 
-
         regionRepo.save(Himalaya);
         regionRepo.save(Lapland);
         regionRepo.save(FrenchSpeakingSwitzerland);
@@ -81,7 +80,6 @@ public class Populator {
         regionRepo.save(Guayana);
         regionRepo.save(AfricaGreatLakes);
         regionRepo.save(MidWest);
-
 
         String description1 = "This ancient trade route has been open to foreign trekkers since 1977 and is one of the most beautiful hikes on the planet. The total length of the route varies between 100 and145 miles, and takes anywhere from 15 to 25 days to complete depending on your speed. The highlights include reaching an altitude of almost 18,000 feet at Thorung La summit pass and watching the sun rise over towering peaks at Poon Hill. Leave your camping gear at home; there are cheap hotels all along the route.";
         String description2 = "The King's Trail (Kungsleden) in northern Sweden, is probably is one of the world’s most famous hiking trails. The trail is approximately 440 kilometers (270 miles) long, between Abisko in the north and Hemavan in the south and it passes through four national parks: Abisko, Stora Sjöfallet, Sarek and Pieljekaise.";

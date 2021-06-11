@@ -11,7 +11,6 @@ public class Region {
     @GeneratedValue
     private Long id;
     private String name;
-    private String title;
     private Continent continent;
     @OneToMany
     private Collection<Trek> treks;
