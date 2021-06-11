@@ -36,7 +36,6 @@ footer {
 }
 
 main img:hover {
-    border: 3px solid blue;
+    border: 2px solid #999;
     transition: .5s;
-    transform: scale(3);
 }

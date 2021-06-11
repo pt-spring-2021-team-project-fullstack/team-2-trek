@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>World Trekking - Continents</title>
+    <title>World Trekking - Regions</title>
     <link rel="stylesheet" type="text/css" href="./css/continentStyle.css">
 </head>
 <body>
@@ -18,25 +18,24 @@
             </header>
         </div>
             <div class="intro">
-        Most Iconic Treks by Continent.
-        <p>Deciding the best trekking and most iconic treks by continents can be difficult and time consuming. Let us
-        help you narrow down your choices on the treks by continents. We have check them out ourselves and would love
-        you to follow us and be inspired to put your boots on in joining us on the trail.</p>
+                Most Iconic Treks by Regions.
+                <p>Regions paragraph here</p>
             </div>
     </header>
 
-        <main>
-            <div th:each="continent: ${continentModel}">
-                <a th:href="@{/continent(id=${continent.id})}">
-                    <img th:src="${continent.imageUrl}"></a>
-                <p th:text="${continent.title}"></p>
+                <main>
+                    <div th:each="region: ${regionModel}">
+                        <a th:href="@{/region(id=${region.id})}">
+                            <img th:src="${region.imageUrl}"></a>
+                        <p th:text="${region.title}"></p>
+                    </div>
+                </main>
             </div>
-        </main>
 </div>
 
-<footer>
-    <small>&copy World Trekking 2021</small>
-</footer>
+            <footer>
+                <small>&copy World Trekking 2021</small>
+            </footer>
 
 </body>
 </html>

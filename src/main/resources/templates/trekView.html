@@ -7,9 +7,17 @@
 </head>
 <body>
 <div class="container">
-    <header>
+    <header class="header">
+        <button id="home"><a th:href="world">Home</a></button>
+        <button id="continent"><a th:href="continent">Continent</a></button>
+        <button id="region"><a th:href="region">Region</a></button>
+        <button id="trek"><a th:href="trek">Trek</a></button>
+        <button id="addTrek">Create a Trek</button>
+    </header>
+
+    <div class="intro">
         Trekking Trips
-        <p>If you are an adventure, you would love being outdoor. The adrenaline rush you get from putting your life on
+        <p>If you are an adventurer, you would love being outdoor. The adrenaline rush you get from putting your life on
         line and coming victorious after winning over your fear is incomparable. Go on adventures to find out where you
         truly belong. Embrace the beauty of nature.</p>
         <p>When you are ready for adventure, put your boots on, hike and trek with us. You can expect amazing
@@ -17,7 +25,8 @@
         like minded individuals who love to be outdoors. Let us plan and be your guide for your once in a lifetime
         trekking adventure in one of the six continents! </p>
         <p>See all trekking tours that we offer below.</p>
-    </header>
+    </div>
+
 
     <main>
         <div th:each="trek: ${trekModel}">
