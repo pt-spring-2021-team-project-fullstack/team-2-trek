@@ -25,7 +25,6 @@ public class Trek {
 //    private Boolean bookNow;
 
     @ManyToOne
-    @NotFound(action = NotFoundAction.IGNORE)
     private Continent continent;
 
     public Long getId() {
@@ -67,10 +66,9 @@ public class Trek {
 
     public Trek(){}
 
-    public Trek(Long id, String title, String difficulty, String description,
+    public Trek( String title, String difficulty, String description,
                  String price, String imageUrl, Continent continent){
 
-        this.id = id;
         this.title = title;
 //        this.type = type;
         this.difficulty = difficulty;

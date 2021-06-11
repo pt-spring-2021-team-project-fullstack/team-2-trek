@@ -40,8 +40,8 @@ public class Continent {
         return region;
     }
 
-    public Continent(Long id, String title,  String region, String imageUrl){
-        this.id = id;
+    public Continent( String title,  String region, String imageUrl){
+
         this.title = title;
         this.region = region;
         this.imageUrl = imageUrl;
