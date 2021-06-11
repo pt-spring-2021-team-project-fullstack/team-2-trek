@@ -64,10 +64,9 @@ public class Trek {
         return bookNow;
     }
 
-    public Trek(Long id, String title, String difficulty, String description,
+    public Trek(String title, String difficulty, String description,
                  String price, String imageUrl, Boolean bookNow, Continent continent, String type, Region region){
 
-        this.id = id;
         this.title = title;
         this.type = type;
         this.difficulty = difficulty;
