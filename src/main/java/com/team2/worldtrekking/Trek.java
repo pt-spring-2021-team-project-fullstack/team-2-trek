@@ -1,11 +1,7 @@
 package com.team2.worldtrekking;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -14,26 +10,24 @@ public class Trek {
 
     @Id
     @GeneratedValue
-    private String id;
+    private Long id;
 
-    private String name;
+    private String title;
 //    private String type;
     private String difficulty;
     private String description;
     private String price;
-//    private String imageUrl; //put this back in once images are in place
-//    private Boolean bookNow;
+    private String imageUrl;
 
-    private String continent; // remove this once continent class is built out
+    @ManyToOne
+    private Continent continent;
 
-//    private Collection<Continent> continents; put this back in once Continent class is built out & update populator
-
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
 //    public String getType() {
@@ -48,11 +42,7 @@ public class Trek {
         return description;
     }
 
-//    public Collection<Continent> getContinents() { // add back once Continent is built out & populator adjusted
-//        return continents;
-//    }
-
-    public String getContinent() { //remove once Continent is built out
+    public Continent getContinent() {
         return continent;
     }
 
@@ -61,24 +51,19 @@ public class Trek {
         return price;
     }
 
-//    public String getImageUrl() {
-//        return imageUrl;
-//    }
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
+    public Trek(String title, String difficulty, String description,
+                String price, String imageUrl, Continent continent){
 
-//    public Trek(Long id, String name, String type, String difficulty, String description,
-//                 String price, String imageUrl, Continent... continents){     // reinstate this once Continent, type data, and imaages are in place
-
-    public Trek(String id, String name, String difficulty, String description,
-                String price, String continent){
-
-        this.id = id;
-        this.name = name;
+        this.title = title;
 //        this.type = type;
         this.difficulty = difficulty;
         this.description = description;
         this.price = price;
-//        this.imageUrl = imageUrl;//        this.continents = new ArrayList<>(Arrays.asList(continents));
+        this.imageUrl = imageUrl;
         this.continent = continent;
     }
 

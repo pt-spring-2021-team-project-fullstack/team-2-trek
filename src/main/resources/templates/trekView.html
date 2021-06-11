@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>World Trekking - Treks</title>
+</head>
+<body>
+<div class="container">
+    <header>
+        Your Trek Starts Here!
+    </header>
+
+    <main>
+        <div th:each="trek: ${trekModel}">
+            <a th:href="@{/trek(id=${continent.id})}">
+                <img th:src="${trek.imageUrl}"></a>
+            <p th:text="${trek.title}"></p>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

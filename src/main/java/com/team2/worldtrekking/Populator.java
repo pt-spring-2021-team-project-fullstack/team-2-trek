@@ -1,17 +1,35 @@
 package com.team2.worldtrekking;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
 @Component
-public class Populator {
+public class Populator implements CommandLineRunner {
+
+    @Resource
+    private ContinentRepository continentRepo;
 
     @Resource
     private TrekRepository trekRepo;
 
     @Override
     public void run(String... args) throws Exception {
+
+        Continent asia = Continent("Asia", "region", "https://placekitten.com/640/360\n");
+        Continent europe = Continent("Europe", "region", "https://placekitten.com/640/360\n");
+        Continent africa = Continent("Africa", "region", "https://placekitten.com/640/360\n");
+        Continent southAmerica = Continent("South America", "region", "https://placekitten.com/640/360\n");
+        Continent northAmerica = Continent"North America", "region", "https://placekitten.com/640/360\n");
+        Continent australasia = Continent("Australasia", "region", "https://placekitten.com/640/360\n");
+
+        continentRepo.save(asia);
+        continentRepo.save(europe);
+        continentRepo.save(africa);
+        continentRepo.save(southAmerica);
+        continentRepo.save(northAmerica);
+        continentRepo.save(australasia);
 
         String description1 = "This ancient trade route has been open to foreign trekkers since 1977 and is one of the most beautiful hikes on the planet. The total length of the route varies between 100 and145 miles, and takes anywhere from 15 to 25 days to complete depending on your speed. The highlights include reaching an altitude of almost 18,000 feet at Thorung La summit pass and watching the sun rise over towering peaks at Poon Hill. Leave your camping gear at home; there are cheap hotels all along the route.";
         String description2 = "The King's Trail (Kungsleden) in northern Sweden, is probably is one of the world’s most famous hiking trails. The trail is approximately 440 kilometers (270 miles) long, between Abisko in the north and Hemavan in the south and it passes through four national parks: Abisko, Stora Sjöfallet, Sarek and Pieljekaise.";
@@ -38,56 +56,55 @@ public class Populator {
         String description23 = "Trekking this route is not for the faint of heart, or lungs. This high-altitude ball-buster crosses 11 passes over 14,000 feet along the Tibet-Bhutan border. Along the way you’ll visit magical Buddhist monasteries clinging to the sides of cliffs and pass through secluded villages full of windblown smiles. It takes about 24 days to complete, and the window of perfect weather is very small, mainly in October.";
         String description24 = "This demanding, 15-day (168km) slog through Corsica is legendary for the diversity of landscapes it traverses. There are forests, granite moonscapes, windswept craters, glacial lakes, torrents, peat bogs, snow-capped peaks, plains and névés (stretches of ice formed from snow). But it does not come easy: the path is rocky and sometimes steep, and includes rickety bridges and slippery rock faces - all part of the fun. Created in 1972, the GR20 links Calenzana, in the Balagne, with Conca, north of Porto Vecchio.";
 
-        Trek trek1 = new Trek("1", "Annapurna Circut", "Moderate", description1, "1000", "");
-        Trek trek2 = new Trek("2", "Kungsleden (The King's Trail)", "Moderate", description2, "2000", "Europe");
-        Trek trek3 = new Trek("3", "Haute Route", "Difficult", description3, "2400", "Europe");
-        Trek trek4 = new Trek("4", "Pays Dogon", "Easy", description4, "1700", "Africa");
-        Trek trek5 = new Trek("5", "Fitzroy Trek", "Easy", description5, "2300", "South America");
-        Trek trek6 = new Trek("6", "Routeburn Track", "Easy", description6, "1700", "Australasia");
-        Trek trek7 = new Trek("7", "Long Range Traverse", "Difficult", description7, "2600", "North America");
-        Trek trek8 = new Trek("8", "Camino de Santiago", "Easy", description8, "1500", "Europe");
-        Trek trek9 = new Trek("9", "Lost City of Teyuna", "Moderate", ""description9, "2100", "South America");
-        Trek trek10 = new Trek("10", "Inca Trail", "Moderate", description10, "1900", "South America");
-        Trek trek11 = new Trek("11", "Torres del Paine", "Moderate", description11, "2200", "South America");
-        Trek trek12 = new Trek("12", "Mount Kailash", "Moderate", description12, "2900", "Asia");
-        Trek trek13 = new Trek("13", "Toukbal Circut", "Moderate", description13, "2500", "Africa");
-        Trek trek14 = new Trek("14", "John Muir Trail", "Moderate", description14, "1400", "North America");
-        Trek trek15 = new Trek("15", "Overland Track", "Moderate", description15, "1700", "Australasia");
-        Trek trek16 = new Trek("16", "Tour du Mont Blanc", "Moderate", description16, "1900", "Europe");
-        Trek trek17 = new Trek("17", "Laugavegur", "Moderate", description17, "2100", "Europe");
-        Trek trek18 = new Trek("18", "Mount Roraima", "Moderate", description18, "2200", "South America");
-        Trek trek19 = new Trek("19", "Kilimanjaro", "Strenuous", description19, "2300", "Africa");
-        Trek trek20 = new Trek("20", "Appalachian Trail", "Strenuous", description20, "1800", "North America");
-        Trek trek21 = new Trek("21", "Everest Base Camp Trek", "Difficult", description21, "2500", "Asia");
-        Trek trek22 = new Trek("22", "Baltoro Glacier and K2", "Difficult", description22, "2800", "Asia");
-        Trek trek23 = new Trek("23", "Snowman Trek", "Difficult", description23, "2400", "Asia");
-        Trek trek24 = new Trek("24", "GR20", "Difficult", description24, "2300", "Europe");
+        Trek trek1 = new Trek("Annapurna Circut", "Moderate", description1, "1000", "https://imgplaceholder.com/640x360\n", asia);
+        Trek trek2 = new Trek("Kungsleden (The King's Trail)", "Moderate", description2, "2000", "https://imgplaceholder.com/640x360\n", europe);
+        Trek trek3 = new Trek("Haute Route", "Difficult", description3, "2400", "https://imgplaceholder.com/640x360\n", europe);
+        Trek trek4 = new Trek("Pays Dogon", "Easy", description4, "1700", "https://imgplaceholder.com/640x360\n", africa);
+        Trek trek5 = new Trek("Fitzroy Trek", "Easy", description5, "2300", "https://imgplaceholder.com/640x360\n", southAmerica);
+        Trek trek6 = new Trek("Routeburn Track", "Easy", description6, "1700", "https://imgplaceholder.com/640x360\n", australasia);
+        Trek trek7 = new Trek("Long Range Traverse", "Difficult", description7, "2600", "https://imgplaceholder.com/640x360\n", europe);
+        Trek trek8 = new Trek("Camino de Santiago", "Easy", description8, "1500", "https://imgplaceholder.com/640x360\n", europe);
+        Trek trek9 = new Trek("Lost City of Teyuna", "Moderate", ""description9, "2100", "https://imgplaceholder.com/640x360\n", southAmerica);
+        Trek trek10 = new Trek("Inca Trail", "Moderate", description10, "1900", "https://imgplaceholder.com/640x360\n", southAmerica);
+        Trek trek11 = new Trek("Torres del Paine", "Moderate", description11, "2200", "https://imgplaceholder.com/640x360\n", southAmerica);
+        Trek trek12 = new Trek("Mount Kailash", "Moderate", description12, "2900", "https://imgplaceholder.com/640x360\n", asia);
+        Trek trek13 = new Trek("Toukbal Circut", "Moderate", description13, "2500", "https://imgplaceholder.com/640x360\n", africa);
+        Trek trek14 = new Trek("John Muir Trail", "Moderate", description14, "1400", "https://imgplaceholder.com/640x360\n", northAmerica);
+        Trek trek15 = new Trek("Overland Track", "Moderate", description15, "1700", "https://imgplaceholder.com/640x360\n", australasia);
+        Trek trek16 = new Trek("Tour du Mont Blanc", "Moderate", description16, "1900", "https://imgplaceholder.com/640x360\n", europe);
+        Trek trek17 = new Trek("Laugavegur", "Moderate", description17, "2100", "https://imgplaceholder.com/640x360\n", europe);
+        Trek trek18 = new Trek("Mount Roraima", "Moderate", description18, "2200", "https://imgplaceholder.com/640x360\n", southAmerica);
+        Trek trek19 = new Trek("Kilimanjaro", "Strenuous", description19, "2300", "https://imgplaceholder.com/640x360\n", asia);
+        Trek trek20 = new Trek("Appalachian Trail", "Strenuous", description20, "1800", "https://imgplaceholder.com/640x360\n", northAmerica);
+        Trek trek21 = new Trek("Everest Base Camp Trek", "Difficult", description21, "2500", "https://imgplaceholder.com/640x360\n", asia);
+        Trek trek22 = new Trek("Baltoro Glacier and K2", "Difficult", description22, "2800", "https://imgplaceholder.com/640x360\n", asia);
+        Trek trek23 = new Trek("Snowman Trek", "Difficult", description23, "2400", "https://imgplaceholder.com/640x360\n", asia);
+        Trek trek24 = new Trek("GR20", "Difficult", description24, "2300", "https://imgplaceholder.com/640x360\n", europe);
 
         trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-        trekRepo.save(trek1);
-
+        trekRepo.save(trek2);
+        trekRepo.save(trek3);
+        trekRepo.save(trek4);
+        trekRepo.save(trek5);
+        trekRepo.save(trek6);
+        trekRepo.save(trek7);
+        trekRepo.save(trek8);
+        trekRepo.save(trek9);
+        trekRepo.save(trek10);
+        trekRepo.save(trek11);
+        trekRepo.save(trek12);
+        trekRepo.save(trek13);
+        trekRepo.save(trek14);
+        trekRepo.save(trek15);
+        trekRepo.save(trek16);
+        trekRepo.save(trek17);
+        trekRepo.save(trek18);
+        trekRepo.save(trek19);
+        trekRepo.save(trek20);
+        trekRepo.save(trek21);
+        trekRepo.save(trek22);
+        trekRepo.save(trek23);
+        trekRepo.save(trek24);
 
     }
 }
