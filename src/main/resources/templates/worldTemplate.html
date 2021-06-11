@@ -8,13 +8,20 @@
 
 <body>
 <div class="container">
-    <header>
+    <header class="header">
+        <button id="home"><a th:href="world">Home</a></button>
+        <button id="continent"><a th:href="continent">Continent</a></button>
+        <button id="region"><a th:href="region">Region</a></button>
+        <button id="trek"><a th:href="trek">Trek</a></button>
+        <button id="addTrek">Create a Trek</button>
+    </header>
+    <div>
         <h1><img src="\title.jpg"></h1>
         <p>Discover your awaiting trekking adventure tour from a local day trek tour, a weekend trek trip, or your
             next trekking bucket list vacation of a lifetime.  Whether you join as a solo traveler, with your family, or
             your closest trek buddies, you'll be greeted by like-minded trekking professional guides.
             Leave the planning to us so you can free yourself and enjoy the experience.</p>
-    </header>
+    </div>
 
     <main>
         <div th:each="continent: ${continentModel}">
