@@ -18,14 +18,14 @@ public class RegionController {
 
     @RequestMapping({"/regions"})
     public String displayRegions(Model model) {
-        model.addAttribute("regions", regionRepo.findAll());
+        model.addAttribute("regionsModel", regionRepo.findAll());
         return "regionsView";
     }
 
     @GetMapping("/regions/{name}")
     public String displaySingleRegion(@PathVariable String name, Model model) {
         Region retrievedRegion = regionRepo.findRegionByName(name);
-        model.addAttribute("region", retrievedRegion);
+        model.addAttribute("regionModel", retrievedRegion);
         return "regionView";
     }
 }

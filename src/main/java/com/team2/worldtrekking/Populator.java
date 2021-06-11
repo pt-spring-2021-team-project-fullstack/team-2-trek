@@ -60,6 +60,8 @@ public class Populator implements CommandLineRunner {
         Region Highlands = new Region(17L, "Highlands", Europe);
         Region Guayana = new Region(18L, "Guayana", SouthAmerica);
         Region AfricaGreatLakes = new Region(18L, "Africa Great Lakes", Africa);
+        Region GilgitBaltistan = new Region(19L, "Gilgit-Baltistan", Asia);
+        Region Corsica = new Region(20L, "Corsica", Europe);
 
         regionRepo.save(Himalaya);
         regionRepo.save(Lapland);
@@ -81,6 +83,8 @@ public class Populator implements CommandLineRunner {
         regionRepo.save(Guayana);
         regionRepo.save(AfricaGreatLakes);
         regionRepo.save(MidWest);
+        regionRepo.save(GilgitBaltistan);
+        regionRepo.save(Corsica);
 
         String description1 = "This ancient trade route has been open to foreign trekkers since 1977 and is one of the most beautiful hikes on the planet. The total length of the route varies between 100 and145 miles, and takes anywhere from 15 to 25 days to complete depending on your speed. The highlights include reaching an altitude of almost 18,000 feet at Thorung La summit pass and watching the sun rise over towering peaks at Poon Hill. Leave your camping gear at home; there are cheap hotels all along the route.";
         String description2 = "The King's Trail (Kungsleden) in northern Sweden, is probably is one of the world’s most famous hiking trails. The trail is approximately 440 kilometers (270 miles) long, between Abisko in the north and Hemavan in the south and it passes through four national parks: Abisko, Stora Sjöfallet, Sarek and Pieljekaise.";
@@ -127,13 +131,13 @@ public class Populator implements CommandLineRunner {
         Trek trek18 = new Trek( "Mount Roraima", "Moderate", description18, "2200", "",true,SouthAmerica, "", Guayana);
         Trek trek19 = new Trek( "Kilimanjaro", "Strenuous", description19, "2300", "",true, Africa, "", AfricaGreatLakes);
         Trek trek20 = new Trek( "Appalachian Trail", "Strenuous", description20, "1800", "",true,NorthAmerica, "", MidWest);
-        Trek trek21 = new Trek( "Everest Base Camp Trek", "Difficult", description21, "2500", "",true,"", "");
-        Trek trek22 = new Trek( "Baltoro Glacier and K2", "Difficult", description22, "2800", "",true,"", "");
-        Trek trek23 = new Trek( "Snowman Trek", "Difficult", description23, "2400", "",true,"", "");
-        Trek trek24 = new Trek( "GR20", "Difficult", description24, "2300", "",true,"", "");
+        Trek trek21 = new Trek( "Everest Base Camp Trek", "Difficult", description21, "2500", "",true, Asia, "", Tibet);
+        Trek trek22 = new Trek( "Baltoro Glacier and K2", "Difficult", description22, "2800", "",true, Asia, "", GilgitBaltistan);
+        Trek trek23 = new Trek( "Snowman Trek", "Difficult", description23, "2400", "",true, Asia, "", Tibet);
+        Trek trek24 = new Trek( "GR20", "Difficult", description24, "2300", "",true,Europe, "", Corsica);
 
         trekRepo.save(trek1);
-        trekRepo.save(trek2);5
+        trekRepo.save(trek2);
         trekRepo.save(trek3);
         trekRepo.save(trek4);
         trekRepo.save(trek5);

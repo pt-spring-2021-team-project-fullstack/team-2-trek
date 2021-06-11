@@ -34,7 +34,6 @@ public class Region {
     }
 
     public Region(long id, /*Trek trekking,*/ String name, Continent continent) {
-        this.id = id;
         this.name = name;
         this.continent = continent;
     }
