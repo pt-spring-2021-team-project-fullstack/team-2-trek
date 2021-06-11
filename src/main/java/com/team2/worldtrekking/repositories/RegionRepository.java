@@ -6,4 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface RegionRepository extends CrudRepository<Region, Long> {
 
     Region findRegionByName(String name);
+
+    Region findAllById();
 }

@@ -12,7 +12,6 @@ public class Continent {
     @Id
     @GeneratedValue
     private  Long id;
-
     private  String title;
     private  String region;
     private  String imageUrl;
