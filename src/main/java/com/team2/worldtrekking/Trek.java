@@ -62,16 +62,16 @@ public class Trek {
         this.region = region;
     }
 
-/*    @Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Trek trek = (Trek) o;
         return Objects.equals(id, trek.id);
-    }*/
+    }
 
-/*    @Override
+    @Override
     public int hashCode() {
         return Objects.hash(id);
-    }*/
+    }
 }
