@@ -1,4 +1,4 @@
-package com.team2.worldtrekking.models;
+package com.team2.worldtrekking;
 
 
 
@@ -22,25 +22,27 @@ public class Continent {
         return treks;
     }
 
-    public Long getId() {
-        return id;
-    }
-
     public String getTitle() {
         return title;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public String getRegion() {
         return region;
     }
 
-    public Continent(String name,  String region, String imageUrl){
+    public Continent( String title,  String region, String imageUrl){
         this.title = title;
         this.region = region;
+        this.imageUrl = imageUrl;
     }
+
     public Continent(){}
 
-    @Override
+/*    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -51,6 +53,6 @@ public class Continent {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
+    }*/
 
 }

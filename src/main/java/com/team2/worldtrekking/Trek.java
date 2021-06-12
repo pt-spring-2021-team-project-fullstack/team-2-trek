@@ -1,4 +1,4 @@
-package com.team2.worldtrekking.models;
+package com.team2.worldtrekking;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
@@ -10,26 +10,21 @@ public class Trek {
 
     @Id
     @GeneratedValue
-    private Long id;
 
     private String title;
-    private String type;
     private String difficulty;
+    @Lob
     private String description;
     private String price;
     private String imageUrl;
-    private Boolean bookNow;
-    private String region;
 
     @ManyToOne
     private Continent continent;
+    @ManyToOne
+    private Region region;
 
     public String getTitle() {
         return title;
-    }
-
-    public String getType() {
-        return type;
     }
 
     public String getDifficulty() {
@@ -44,7 +39,7 @@ public class Trek {
         return continent;
     }
 
-    public String getRegion() {
+    public Region getRegion() {
         return region;
     }
 
@@ -56,33 +51,27 @@ public class Trek {
         return imageUrl;
     }
 
-    public Boolean getBookNow() {
-        return bookNow;
-    }
-
     public Trek(String title, String difficulty, String description,
                  String price, String imageUrl, Continent continent, Region region){
 
-        this.type = type;
         this.difficulty = difficulty;
         this.description = description;
         this.price = price;
         this.imageUrl = imageUrl;
-        this.bookNow = bookNow;
         this.continent = continent;
         this.region = region;
     }
 
-    @Override
+/*    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Trek trek = (Trek) o;
         return Objects.equals(id, trek.id);
-    }
+    }*/
 
-    @Override
+/*    @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
+    }*/
 }

@@ -1,15 +1,10 @@
 package com.team2.worldtrekking;
 
-import com.team2.worldtrekking.models.Continent;
-import com.team2.worldtrekking.models.Region;
-import com.team2.worldtrekking.models.Trek;
-import com.team2.worldtrekking.repositories.ContinentRepository;
-import com.team2.worldtrekking.repositories.RegionRepository;
-import com.team2.worldtrekking.repositories.TrekRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import javax.persistence.Lob;
 
 @Component
 public class Populator implements CommandLineRunner {
@@ -26,42 +21,42 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Continent Asia = new Continent("Asia","SouthEast","images/asia.jpg");
-        Continent Africa = new Continent("Africa","MotherLand","images/africa.jpg");
-        Continent Australia = new Continent("AussieLand","Eastern","images/aussie.jpg");
-        Continent Europe = new Continent("Europe","East","images/europe.jpg");
-        Continent NorthAmerica = new Continent("USA/Canada","West","images/northAmerica.jpg");
-        Continent SouthAmerica = new Continent("SouthAmerica","SouthWest","images/southAmerica.jpg");
+        Continent asia = new Continent("Asia","SouthEast","images/asia.jpg");
+        Continent africa = new Continent("Africa","MotherLand","images/africa.jpg");
+        Continent australia = new Continent("AussieLand","Eastern","images/aussie.jpg");
+        Continent europe = new Continent("Europe","East","images/europe.jpg");
+        Continent northAmerica = new Continent("USA/Canada","West","images/northAmerica.jpg");
+        Continent southAmerica = new Continent("SouthAmerica","SouthWest","images/southAmerica.jpg");
 
-        continentRepo.save(SouthAmerica);
-        continentRepo.save(Africa);
-        continentRepo.save(Asia);
-        continentRepo.save(Australia);
-        continentRepo.save(Europe);
-        continentRepo.save(NorthAmerica);
+        continentRepo.save(southAmerica);
+        continentRepo.save(africa);
+        continentRepo.save(asia);
+        continentRepo.save(australia);
+        continentRepo.save(europe);
+        continentRepo.save(northAmerica);
 
-        Region midWest = new Region("MidWest", NorthAmerica);
-        Region atlantic = new Region("Atlantic", NorthAmerica);
-        Region pacific = new Region( "Pacific", NorthAmerica);
-        Region himalaya = new Region("Himalaya", Asia);
-        Region lapland = new Region("Lapland", Europe);
-        Region frenchSpeakingSwitzerland = new Region("French Speaking Region of Switzerland", Europe);
-        Region easternMali = new Region( "Eastern Mali", Africa);
-        Region patagonia = new Region( "Patagonia", SouthAmerica);
-        Region fiordland = new Region( "Fiordland", Australia);
-        Region galicia = new Region( "Galicia", Europe);
-        Region costaNorte = new Region( "Costa Norte", SouthAmerica);
-        Region sacredValley = new Region( "Sacred Valley", SouthAmerica);
-        Region magallanes = new Region( "Magallanes", SouthAmerica);
-        Region tibet = new Region( "Tibet", Asia);
-        Region maghreb = new Region( "Magrheb", Africa);
-        Region northWest = new Region( "NorthWest", Australia);
-        Region westernEurope = new Region( "Western Europe", Europe);
-        Region highlands = new Region( "Highlands", Europe);
-        Region guayana = new Region( "Guayana", SouthAmerica);
-        Region africaGreatLakes = new Region( "Africa Great Lakes", Africa);
-        Region gilgitBaltistan = new Region( "Gilgit-Baltistan", Asia);
-        Region corsica = new Region( "Corsica", Europe);
+        Region midWest = new Region("MidWest", northAmerica);
+        Region atlantic = new Region("Atlantic", northAmerica);
+        Region pacific = new Region( "Pacific", northAmerica);
+        Region himalaya = new Region("Himalaya", asia);
+        Region lapland = new Region("Lapland", europe);
+        Region frenchSpeakingSwitzerland = new Region("French Speaking Region of Switzerland", europe);
+        Region easternMali = new Region( "Eastern Mali", africa);
+        Region patagonia = new Region( "Patagonia", southAmerica);
+        Region fiordland = new Region( "Fiordland", australia);
+        Region galicia = new Region( "Galicia", europe);
+        Region costaNorte = new Region( "Costa Norte", southAmerica);
+        Region sacredValley = new Region( "Sacred Valley", southAmerica);
+        Region magallanes = new Region( "Magallanes", southAmerica);
+        Region tibet = new Region( "Tibet", asia);
+        Region maghreb = new Region( "Magrheb", africa);
+        Region northWest = new Region( "NorthWest", australia);
+        Region westernEurope = new Region( "Western Europe", europe);
+        Region highlands = new Region( "Highlands", europe);
+        Region guayana = new Region( "Guayana", southAmerica);
+        Region africaGreatLakes = new Region( "Africa Great Lakes", africa);
+        Region gilgitBaltistan = new Region( "Gilgit-Baltistan", asia);
+        Region corsica = new Region( "Corsica", europe);
 
         regionRepo.save(himalaya);
         regionRepo.save(lapland);
@@ -111,30 +106,30 @@ public class Populator implements CommandLineRunner {
         String description23 = "Trekking this route is not for the faint of heart, or lungs. This high-altitude ball-buster crosses 11 passes over 14,000 feet along the Tibet-Bhutan border. Along the way you’ll visit magical Buddhist monasteries clinging to the sides of cliffs and pass through secluded villages full of windblown smiles. It takes about 24 days to complete, and the window of perfect weather is very small, mainly in October.";
         String description24 = "This demanding, 15-day (168km) slog through Corsica is legendary for the diversity of landscapes it traverses. There are forests, granite moonscapes, windswept craters, glacial lakes, torrents, peat bogs, snow-capped peaks, plains and névés (stretches of ice formed from snow). But it does not come easy: the path is rocky and sometimes steep, and includes rickety bridges and slippery rock faces - all part of the fun. Created in 1972, the GR20 links Calenzana, in the Balagne, with Conca, north of Porto Vecchio.";
 
-        Trek trek1 = new Trek("Annapurna Circut", "Moderate", description1, "1000", "", Asia, himalaya);
-        Trek trek2 = new Trek("Kungsleden (The King's Trail)", "Moderate", description2, "2000", "", Europe, lapland);
-        Trek trek3 = new Trek("Haute Route", "Difficult", description3, "2400", "", Europe, frenchSpeakingSwitzerland);
-        Trek trek4 = new Trek("Pays Dogon", "Easy", description4, "1700", "", Africa, easternMali);
-        Trek trek5 = new Trek("Fitzroy Trek", "Easy", description5, "2300", "", SouthAmerica, patagonia);
-        Trek trek6 = new Trek("Routeburn Track", "Easy", description6, "1700", "", Australia, fiordland);
-        Trek trek7 = new Trek("Long Range Traverse", "Difficult", description7, "2600", "", NorthAmerica, atlantic);
-        Trek trek8 = new Trek("Camino de Santiago", "Easy", description8, "1500", "", Europe, galicia);
-        Trek trek9 = new Trek("Lost City of Teyuna", "Moderate", description9, "2100","", SouthAmerica, costaNorte);
-        Trek trek10 = new Trek( "Inca Trail", "Moderate", description10, "1900", "", SouthAmerica, sacredValley);
-        Trek trek11 = new Trek( "Torres del Paine", "Moderate", description11, "2200", "", SouthAmerica, magallanes);
-        Trek trek12 = new Trek( "Mount Kailash", "Moderate", description12, "2900", "", Asia,  tibet);
-        Trek trek13 = new Trek( "Toukbal Circut", "Moderate", description13, "2500", "", Africa,  maghreb);
-        Trek trek14 = new Trek( "John Muir Trail", "Moderate", description14, "1400", "", NorthAmerica,  pacific);
-        Trek trek15 = new Trek( "Overland Track", "Moderate", description15, "1700", "", Australia,  northWest);
-        Trek trek16 = new Trek( "Tour du Mont Blanc", "Moderate", description16, "1900", "", Europe,  westernEurope);
-        Trek trek17 = new Trek( "Laugavegur", "Moderate", description17, "2100", "", Europe,  highlands);
-        Trek trek18 = new Trek( "Mount Roraima", "Moderate", description18, "2200", "",SouthAmerica,  guayana);
-        Trek trek19 = new Trek( "Kilimanjaro", "Strenuous", description19, "2300", "", Africa,  africaGreatLakes);
-        Trek trek20 = new Trek( "Appalachian Trail", "Strenuous", description20, "1800", "", NorthAmerica, midWest);
-        Trek trek21 = new Trek( "Everest Base Camp Trek", "Difficult", description21, "2500", "", Asia, tibet);
-        Trek trek22 = new Trek( "Baltoro Glacier and K2", "Difficult", description22, "2800", "", Asia, gilgitBaltistan);
-        Trek trek23 = new Trek( "Snowman Trek", "Difficult", description23, "2400", "", Asia,  tibet);
-        Trek trek24 = new Trek( "GR20", "Difficult", description24, "2300", "", Europe, corsica);
+        Trek trek1 = new Trek("Annapurna Circut", "Moderate", description1, "1000", "images/annapurnaCircuit1.jpg", asia, himalaya);
+        Trek trek2 = new Trek("Kungsleden (The King's Trail)", "Moderate", description2, "2000", "images/kungsleden1.jpeg", europe, lapland);
+        Trek trek3 = new Trek("Haute Route", "Difficult", description3, "2400", "images/hauteRoute1.jpg", europe, frenchSpeakingSwitzerland);
+        Trek trek4 = new Trek("Pays Dogon", "Easy", description4, "1700", "images/paysDogon1.jpg", africa, easternMali);
+        Trek trek5 = new Trek("Fitzroy Trek", "Easy", description5, "2300", "images/fitzroyTrek1.jpg", southAmerica, patagonia);
+        Trek trek6 = new Trek("Routeburn Track", "Easy", description6, "1700", "images/routeburnTrack1.jpg", australia, fiordland);
+        Trek trek7 = new Trek("Long Range Traverse", "Difficult", description7, "2600", "images/longRangeTraverse2.jpg", northAmerica, atlantic);
+        Trek trek8 = new Trek("Camino de Santiago", "Easy", description8, "1500", "images/caminoDeSantiago1.jpg", europe, galicia);
+        Trek trek9 = new Trek("Lost City of Teyuna", "Moderate", description9, "2100","images/lostCityOfTeyuna1.jpg", southAmerica, costaNorte);
+        Trek trek10 = new Trek( "Inca Trail", "Moderate", description10, "1900", "images/incaTrain1.jpg", southAmerica, sacredValley);
+        Trek trek11 = new Trek( "Torres del Paine", "Moderate", description11, "2200", "images/torresDelPaine1.jpg", southAmerica, magallanes);
+        Trek trek12 = new Trek( "Mount Kailash", "Moderate", description12, "2900", "images/mountKailash1.jpg", asia,  tibet);
+        Trek trek13 = new Trek( "Toukbal Circut", "Moderate", description13, "2500", "images/toukbalCircuit1.jpg", africa,  maghreb);
+        Trek trek14 = new Trek( "John Muir Trail", "Moderate", description14, "1400", "images/johnMuirTrail1.jpg", northAmerica,  pacific);
+        Trek trek15 = new Trek( "Overland Track", "Moderate", description15, "1700", "images/overlandTrack1.jpg", australia,  northWest);
+        Trek trek16 = new Trek( "Tour du Mont Blanc", "Moderate", description16, "1900", "images/tourDuMontBlanc2.jpg", europe,  westernEurope);
+        Trek trek17 = new Trek( "Laugavegur", "Moderate", description17, "2100", "images/laugavegur1.jpg", europe,  highlands);
+        Trek trek18 = new Trek( "Mount Roraima", "Moderate", description18, "2200", "images/mountRoraima1.jpg", southAmerica,  guayana);
+        Trek trek19 = new Trek( "Kilimanjaro", "Strenuous", description19, "2300", "images/kilimanjaro1.jpg", africa,  africaGreatLakes);
+        Trek trek20 = new Trek( "Appalachian Trail", "Strenuous", description20, "1800", "images/appalachianTrail1.jpg", northAmerica, midWest);
+        Trek trek21 = new Trek( "Everest Base Camp Trek", "Difficult", description21, "2500", "images/everestBaseCampTrek1.jpg", asia, tibet);
+        Trek trek22 = new Trek( "Baltoro Glacier and K2", "Difficult", description22, "2800", "images/baltoroGlacier1.jpg", asia, gilgitBaltistan);
+        Trek trek23 = new Trek( "Snowman Trek", "Difficult", description23, "2400", "images/snowmanTrek1.jpg", asia, tibet);
+        Trek trek24 = new Trek( "GR20", "Difficult", description24, "2300", "images/gr201.jpg", europe, corsica);
 
         trekRepo.save(trek1);
         trekRepo.save(trek2);

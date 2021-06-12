@@ -1,4 +1,4 @@
-package com.team2.worldtrekking.models;
+package com.team2.worldtrekking;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -22,8 +22,6 @@ public class Region {
     public String getRegionName() {
         return name;
     }
-
-    public String getTrekTitle() { return title; }
 
     public Continent getContinent() {
         return continent;

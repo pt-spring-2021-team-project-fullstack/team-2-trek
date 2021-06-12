@@ -20,27 +20,27 @@
         <div th:each="continent: ${continentModel}">
             <a th:href="@{/continent(id=${continent.id})}">
                 <img th:src="${continent.imageUrl}"></a>
-            <p th:text="${continent.name}"></p>
+            <p th:text="${continent.title}"></p>
         </div>
         <div th:each="region: ${regionModel}">
-            <a th:href="@{/region(id=${continent.id})}">
+            <a th:href="@{/region(id=${region.id})}">
                 <img th:src="${region.imageUrl}"></a>
-            <p th:text="${region.name}"></p>
+            <p th:text="${region.title}"></p>
         </div>
         <div th:each="trek: ${trekModel}">
-            <a th:href="@{/trek(id=${continent.id})}">
+            <a th:href="@{/trek(id=${trek.id})}">
                 <img th:src="${trek.imageUrl}"></a>
-            <p th:text="${trek.name}"></p>
+            <p th:text="${trek.title}"></p>
         </div>
         <div th:each="difficulty: ${difficultyModel}">
-            <a th:href="@{/difficulty(id=${continent.id})}">
+            <a th:href="@{/difficulty(id=${difficulty.id})}">
                 <img th:src="${difficulty.imageUrl}"></a>
-            <p th:text="${difficulty.name}"></p>
+            <p th:text="${difficulty.title}"></p>
         </div>
-        <div th:each="about: ${difficultyModel}">
-            <a th:href="@{/about(id=${continent.id})}">
+        <div th:each="about: ${aboutModel}">
+            <a th:href="@{/about(id=${about.id})}">
                 <img th:src="${about.imageUrl}"></a>
-            <p th:text="${about.name}"></p>
+            <p th:text="${about.title}"></p>
         </div>
     </main>
 </div>
