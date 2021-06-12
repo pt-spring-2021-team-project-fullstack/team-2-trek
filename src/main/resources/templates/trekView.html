@@ -6,12 +6,14 @@
     <link rel="stylesheet" type="text/css" href="./css/trekStyle.css">
 </head>
 <body>
+<embed src="/music/serene.mp3" autostart="true" loop="true" hidden="true">
 <div class="container">
     <header class="header">
-        <button id="home"><a th:href="world">Home</a></button>
+        <button id="home"><a th:href="index">Home</a></button>
         <button id="continent"><a th:href="continent">Continent</a></button>
         <button id="region"><a th:href="region">Region</a></button>
         <button id="trek"><a th:href="trek">Trek</a></button>
+        <button id="difficulty"><a th:href="difficulty">Difficulty</a></button>
         <button id="addTrek">Create a Trek</button>
     </header>
 
@@ -36,6 +38,6 @@
         </div>
     </main>
 </div>
-
+</div>
 </body>
 </html>
