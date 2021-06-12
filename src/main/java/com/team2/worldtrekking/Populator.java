@@ -38,28 +38,28 @@ public class Populator implements CommandLineRunner {
 
         Region midWest = new Region("MidWest", northAmerica);
         Region atlantic = new Region("Atlantic", northAmerica);
-        Region pacific = new Region( "Pacific", northAmerica);
+        Region pacific = new Region("Pacific", northAmerica);
         Region himalaya = new Region("Himalaya", asia);
         Region lapland = new Region("Lapland", europe);
         Region frenchSpeakingSwitzerland = new Region("French Speaking Region of Switzerland", europe);
-        Region easternMali = new Region( "Eastern Mali", africa);
-        Region patagonia = new Region( "Patagonia", southAmerica);
-        Region fiordland = new Region( "Fiordland", australia);
-        Region galicia = new Region( "Galicia", europe);
-        Region costaNorte = new Region( "Costa Norte", southAmerica);
-        Region sacredValley = new Region( "Sacred Valley", southAmerica);
-        Region magallanes = new Region( "Magallanes", southAmerica);
-        Region tibet = new Region( "Tibet", asia);
-        Region maghreb = new Region( "Magrheb", africa);
-        Region northWest = new Region( "NorthWest", australia);
-        Region westernEurope = new Region( "Western Europe", europe);
-        Region highlands = new Region( "Highlands", europe);
-        Region guayana = new Region( "Guayana", southAmerica);
-        Region africaGreatLakes = new Region( "Africa Great Lakes", africa);
-        Region gilgitBaltistan = new Region( "Gilgit-Baltistan", asia);
-        Region corsica = new Region( "Corsica", europe);
+        Region easternMali = new Region("Eastern Mali", africa);
+        Region patagonia = new Region("Patagonia", southAmerica);
+        Region fiordland = new Region("Fiordland", australia);
+        Region galicia = new Region("Galicia", europe);
+        Region costaNorte = new Region("Costa Norte", southAmerica);
+        Region sacredValley = new Region("Sacred Valley", southAmerica);
+        Region magallanes = new Region("Magallanes", southAmerica);
+        Region tibet = new Region("Tibet", asia);
+        Region maghreb = new Region("Magrheb", africa);
+        Region northWest = new Region("NorthWest", australia);
+        Region westernEurope = new Region("Western Europe", europe);
+        Region highlands = new Region("Highlands", europe);
+        Region guayana = new Region("Guayana", southAmerica);
+        Region africaGreatLakes = new Region("Africa Great Lakes", africa);
+        Region gilgitBaltistan = new Region("Gilgit-Baltistan", asia);
+        Region corsica = new Region("Corsica", europe);
 
-        regionRepo.save(midWest);
+
         regionRepo.save(himalaya);
         regionRepo.save(lapland);
         regionRepo.save(frenchSpeakingSwitzerland);

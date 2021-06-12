@@ -1,24 +1,27 @@
 package com.team2.worldtrekking;
 
-import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "REGION")
 public class Region {
 
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String title;
-    private Continent continent;
 
-    @OneToMany(mappedBy="region")
-    public Collection<Trek> treks;
+    private String title;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @ManyToOne
+    private Continent continent;
+    @OneToMany
+    private Collection<Trek> treks;
 
     public Collection<Trek> getTreks() {
         return treks;
     }
+
 
     public Long getId() {
         return id;
@@ -32,10 +35,13 @@ public class Region {
         return continent;
     }
 
-    public Region(String title, Continent continent) {
+    public Region(/*Long id, */String title, Continent continent/*, Trek... treks*/) {
+        /*this.id = id;*/
         this.title = title;
         this.continent = continent;
     }
+
+    public Region() {}
 
     @Override
     public boolean equals(Object o) {

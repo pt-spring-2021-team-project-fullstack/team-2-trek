@@ -1,5 +1,7 @@
 package com.team2.worldtrekking;
 
+
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
@@ -38,8 +40,8 @@ public class Continent {
         return region;
     }
 
-    public Continent( String title,  String region, String imageUrl){
-
+    public Continent(/*Long id,*/ String title,  String region, String imageUrl){
+        /*this.id = id;*/
         this.title = title;
         this.region = region;
         this.imageUrl = imageUrl;
