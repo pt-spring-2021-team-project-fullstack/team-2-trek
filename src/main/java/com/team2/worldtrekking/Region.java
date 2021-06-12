@@ -5,17 +5,15 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-public class Continent {
+public class Region {
 
     @Id
     @GeneratedValue
-    private  Long id;
+    private Long id;
+    private String title;
+    private Continent continent;
 
-    private  String title;
-    private  String region;
-    private  String imageUrl;
-
-    @OneToMany(mappedBy="continent")
+    @OneToMany(mappedBy="region")
     public Collection<Trek> treks;
 
     public Collection<Trek> getTreks() {
@@ -26,37 +24,29 @@ public class Continent {
         return id;
     }
 
-    public String getTitle() {
+    public String getRegionName() {
         return title;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public Continent getContinent() {
+        return continent;
     }
 
-    public String getRegion() {
-        return region;
-    }
-
-    public Continent( String title,  String region, String imageUrl){
-
+    public Region(String title, Continent continent) {
         this.title = title;
-        this.region = region;
-        this.imageUrl = imageUrl;
+        this.continent = continent;
     }
-    public Continent(){}
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Continent continent = (Continent) o;
-        return Objects.equals(id, continent.id);
+        Region region = (Region) o;
+        return Objects.equals(id, region.id);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id);
     }
-
 }
