@@ -12,10 +12,10 @@ public class DifficultyController {
     @Resource
     private DifficultyRepository difficultyRepo;
 
-    @RequestMapping("/difficulties")
+    @RequestMapping("/difficulty")
     public String displayDifficulties(Model model){
         model.addAttribute("difficultiesModel", difficultyRepo.findAll());
-        return "return difficultiesView";
+        return "return difficultyView";
 
     }
 
