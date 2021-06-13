@@ -2,12 +2,15 @@ package com.team2.worldtrekking;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
+import java.util.Collection;
+import javax.persistence.*;
 import javax.annotation.Resource;
 import javax.persistence.Lob;
 
 @Component
 public class Populator implements CommandLineRunner {
+
+
 
     @Resource
     private TrekRepository trekRepo;
@@ -22,12 +25,14 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Continent asia = new Continent("Asia","SouthEast","images/asia.jpg");
-        Continent africa = new Continent("Africa","MotherLand","images/africa.jpg");
-        Continent australia = new Continent("Australia","Eastern","images/australia.jpg");
-        Continent europe = new Continent("Europe","East","images/europe.jpg");
-        Continent northAmerica = new Continent("USA/Canada","West","images/northAmerica.jpg");
-        Continent southAmerica = new Continent("SouthAmerica","SouthWest","images/southAmerica.jpg");
+        Region region= new Region();
+
+        Continent asia = new Continent("Asia","images/asia.jpg");
+        Continent africa = new Continent("Africa","images/africa.jpg");
+        Continent australia = new Continent("Australia","images/australia.jpg");
+        Continent europe = new Continent("Europe", "images/europe.jpg");
+        Continent northAmerica = new Continent("USA/Canada","images/northAmerica.jpg");
+        Continent southAmerica = new Continent("SouthAmerica","images/southAmerica.jpg");
 
         continentRepo.save(southAmerica);
         continentRepo.save(africa);
@@ -58,7 +63,6 @@ public class Populator implements CommandLineRunner {
         Region africaGreatLakes = new Region("Africa Great Lakes", africa);
         Region gilgitBaltistan = new Region("Gilgit-Baltistan", asia);
         Region corsica = new Region("Corsica", europe);
-
 
         regionRepo.save(himalaya);
         regionRepo.save(lapland);
@@ -120,14 +124,14 @@ public class Populator implements CommandLineRunner {
         Trek trek9 = new Trek("Lost City of Teyuna", "Moderate", description9, "2100","images/lostCityOfTeyuna1.jpg", southAmerica, costaNorte);
         Trek trek10 = new Trek( "Inca Trail", "Moderate", description10, "1900", "images/incaTrain1.jpg", southAmerica, sacredValley);
         Trek trek11 = new Trek( "Torres del Paine", "Moderate", description11, "2200", "images/torresDelPaine1.jpg", southAmerica, magallanes);
-        Trek trek12 = new Trek( "Mount Kailash", "Moderate", description12, "2900", "images/mountKailash1.jpg", asia,  tibet);
-        Trek trek13 = new Trek( "Toukbal Circut", "Moderate", description13, "2500", "images/toukbalCircuit1.jpg", africa,  maghreb);
-        Trek trek14 = new Trek( "John Muir Trail", "Moderate", description14, "1400", "images/johnMuirTrail1.jpg", northAmerica,  pacific);
-        Trek trek15 = new Trek( "Overland Track", "Moderate", description15, "1700", "images/overlandTrack1.jpg", australia,  northWest);
-        Trek trek16 = new Trek( "Tour du Mont Blanc", "Moderate", description16, "1900", "images/tourDuMontBlanc2.jpg", europe,  westernEurope);
-        Trek trek17 = new Trek( "Laugavegur", "Moderate", description17, "2100", "images/laugavegur1.jpg", europe,  highlands);
-        Trek trek18 = new Trek( "Mount Roraima", "Moderate", description18, "2200", "images/mountRoraima1.jpg", southAmerica,  guayana);
-        Trek trek19 = new Trek( "Kilimanjaro", "Strenuous", description19, "2300", "images/kilimanjaro1.jpg", africa,  africaGreatLakes);
+        Trek trek12 = new Trek( "Mount Kailash", "Moderate", description12, "2900", "images/mountKailash1.jpg", asia, tibet);
+        Trek trek13 = new Trek( "Toukbal Circut", "Moderate", description13, "2500", "images/toukbalCircuit1.jpg", africa, maghreb);
+        Trek trek14 = new Trek( "John Muir Trail", "Moderate", description14, "1400", "images/johnMuirTrail1.jpg", northAmerica, pacific);
+        Trek trek15 = new Trek( "Overland Track", "Moderate", description15, "1700", "images/overlandTrack1.jpg", australia, northWest);
+        Trek trek16 = new Trek( "Tour du Mont Blanc", "Moderate", description16, "1900", "images/tourDuMontBlanc2.jpg", europe, westernEurope);
+        Trek trek17 = new Trek( "Laugavegur", "Moderate", description17, "2100", "images/laugavegur1.jpg", europe, highlands);
+        Trek trek18 = new Trek( "Mount Roraima", "Moderate", description18, "2200", "images/mountRoraima1.jpg", southAmerica, guayana);
+        Trek trek19 = new Trek( "Kilimanjaro", "Strenuous", description19, "2300", "images/kilimanjaro1.jpg", africa, africaGreatLakes);
         Trek trek20 = new Trek( "Appalachian Trail", "Strenuous", description20, "1800", "images/appalachianTrail1.jpg", northAmerica, midWest);
         Trek trek21 = new Trek( "Everest Base Camp Trek", "Difficult", description21, "2500", "images/everestBaseCampTrek1.jpg", asia, tibet);
         Trek trek22 = new Trek( "Baltoro Glacier and K2", "Difficult", description22, "2800", "images/baltoroGlacier1.jpg", asia, gilgitBaltistan);
