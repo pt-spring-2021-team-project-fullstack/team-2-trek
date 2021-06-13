@@ -25,7 +25,6 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Region region= new Region();
 
         Continent asia = new Continent("Asia","images/asia.jpg");
         Continent africa = new Continent("Africa","images/africa.jpg");
@@ -65,6 +64,7 @@ public class Populator implements CommandLineRunner {
         Region corsica = new Region("Corsica", europe);
 
         regionRepo.save(himalaya);
+        regionRepo.save(midWest);
         regionRepo.save(lapland);
         regionRepo.save(frenchSpeakingSwitzerland);
         regionRepo.save(easternMali);

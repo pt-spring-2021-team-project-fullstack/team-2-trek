@@ -25,19 +25,13 @@ public class Trek {
     private Continent continent;
     @ManyToOne
     private Region regions;
+
+
 /*    public Collection<Region> regions;
 
     public Collection<Region> getRegion() {
         return regions;
     }*/
-
-    public Region getRegion() {
-        return regions;
-    }
-
-    public Long getId() {
-        return id;
-    }
 
     public String getTitle() {
         return title;
@@ -45,6 +39,14 @@ public class Trek {
 
     public String getDifficulty() {
         return difficulty;
+    }
+
+    public Region getRegion() {
+        return regions;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getDescription() {

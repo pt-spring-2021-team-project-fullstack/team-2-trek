@@ -19,12 +19,14 @@ public class Region {
     @ManyToOne
     private Continent continent;
 
-    @OneToMany(mappedBy="region")
-    public Collection<Trek> treks;
+/*    @OneToMany(mappedBy = "region", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public Collection<Trek> trek;
 
     public Collection<Trek> getTreks() {
-        return treks;
-    }
+        return trek;
+    }*/
+
+    /*public Collection<Region> getRegions() {return regions;}*/
 
     public Long getId() {
         return id;
