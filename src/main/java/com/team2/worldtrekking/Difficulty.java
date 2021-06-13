@@ -3,6 +3,7 @@ package com.team2.worldtrekking;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class Difficulty {
@@ -30,9 +31,24 @@ public class Difficulty {
         return imageUrl;
     }
 
+
+
     public Difficulty(String difficultyLevel, String description, String imageUrl) {
         this.difficultyLevel = difficultyLevel;
         this.description = description;
         this.imageUrl = imageUrl;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Difficulty that = (Difficulty) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
