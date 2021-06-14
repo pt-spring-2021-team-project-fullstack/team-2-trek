@@ -25,7 +25,6 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-
         Continent asia = new Continent("Asia","images/asia.jpg");
         Continent africa = new Continent("Africa","images/africa.jpg");
         Continent australia = new Continent("Australia","images/australia.jpg");
@@ -86,7 +85,6 @@ public class Populator implements CommandLineRunner {
         regionRepo.save(gilgitBaltistan);
         regionRepo.save(corsica);
 
-
         String description1 = "This ancient trade route has been open to foreign trekkers since 1977 and is one of the most beautiful hikes on the planet. The total length of the route varies between 100 and145 miles, and takes anywhere from 15 to 25 days to complete depending on your speed. The highlights include reaching an altitude of almost 18,000 feet at Thorung La summit pass and watching the sun rise over towering peaks at Poon Hill. Leave your camping gear at home; there are cheap hotels all along the route.";
         String description2 = "The King's Trail (Kungsleden) in northern Sweden, is probably is one of the world’s most famous hiking trails. The trail is approximately 440 kilometers (270 miles) long, between Abisko in the north and Hemavan in the south and it passes through four national parks: Abisko, Stora Sjöfallet, Sarek and Pieljekaise.";
         String description3 = "Leading from Chamonix in France through the southern Valais to Zermatt in Switzerland, the Haute Route traverses some of the highest and most scenic country accessible to walkers anywhere in the Alps. The summer Haute Route walk (which takes a different course than the more famous winter ski-touring route) takes around two weeks to complete. It mainly involves \"pass hopping\" and demands a high level of fitness, with every section containing a high huff factor.";
@@ -111,7 +109,6 @@ public class Populator implements CommandLineRunner {
         String description22 = "This corridor of ice leads to the colossal peak of K2 (8,611m), the world's second-highest peak. This incomparable trek traverses some of the most humbling scenery on the planet. What begins following icy rivers boldly goes to the guts of the glacier before leading to the granite pyramidal mountains including Paiju (6,610m), Uli Biaho (6,417m), Great Trango Tower (6,286m) and ultimately K2. If the 15 days does not floor you, take side trips to more moraine-covered glaciers.";
         String description23 = "Trekking this route is not for the faint of heart, or lungs. This high-altitude ball-buster crosses 11 passes over 14,000 feet along the Tibet-Bhutan border. Along the way you’ll visit magical Buddhist monasteries clinging to the sides of cliffs and pass through secluded villages full of windblown smiles. It takes about 24 days to complete, and the window of perfect weather is very small, mainly in October.";
         String description24 = "This demanding, 15-day (168km) slog through Corsica is legendary for the diversity of landscapes it traverses. There are forests, granite moonscapes, windswept craters, glacial lakes, torrents, peat bogs, snow-capped peaks, plains and névés (stretches of ice formed from snow). But it does not come easy: the path is rocky and sometimes steep, and includes rickety bridges and slippery rock faces - all part of the fun. Created in 1972, the GR20 links Calenzana, in the Balagne, with Conca, north of Porto Vecchio.";
-
 
         Trek trek1 = new Trek("Annapurna Circut", "Moderate", description1, "1000", "images/annapurnaCircuit1.jpg", asia, himalaya);
         Trek trek2 = new Trek("Kungsleden (The King's Trail)", "Moderate", description2, "2000", "images/kungsleden1.jpeg", europe, lapland);
@@ -162,8 +159,6 @@ public class Populator implements CommandLineRunner {
         trekRepo.save(trek22);
         trekRepo.save(trek23);
         trekRepo.save(trek24);
-
-
 
     }
 }
