@@ -2,8 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>World Trekking - Regions</title>
-    <link rel="stylesheet" type="text/css" href="./css/regionStyle.css">
+    <title>World Trekking - Difficulty Types</title>
+    <link rel="stylesheet" type="text/css" href="./css/difficultStyle.css">
 </head>
 <body>
     <embed src="/music/serene.mp3" autostart="true" loop="true" hidden="true">
@@ -20,25 +20,26 @@
             </header>
         </div>
         <div class="title-image"><img class="title" src="images/title.jpg"></div>
-            <div class="intro">
-                Most Iconic Treks by Regions.
-                <p>Regions paragraph here</p>
-            </div>
+        <div class="intro">
+            Most Iconic Treks by difficulty types.
+            <p>Deciding the best trekking and most iconic treks by continents can be difficult and time consuming. Let us
+                help you narrow down your choices on the treks by continents. We have check them out ourselves and would love
+                you to follow us and be inspired to put your boots on in joining us on the trail.</p>
+        </div>
     </header>
 
-                <main>
-                    <div th:each="region: ${regionModel}">
-                        <a th:href="@{/region(id=${region.id})}">
-                            <img th:src="${region.imageUrl}"></a>
-                        <p th:text="${region.title}"></p>
-                    </div>
-                </main>
-            </div>
+    <main>
+        <div th:each="difficulty: ${difficultyModel}">
+            <a th:href="@{/difficulty(id=${difficulty.id})}">
+                <img th:src="${difficulty.imageUrl}"></a>
+            <p th:text="${difficulty.title}"></p>
+        </div>
+    </main>
 </div>
 
-            <footer>
-                <small>&copy World Trekking 2021</small>
-            </footer>
+<footer>
+    <small>&copy World Trekking 2021</small>
+</footer>
 
 </body>
 </html>

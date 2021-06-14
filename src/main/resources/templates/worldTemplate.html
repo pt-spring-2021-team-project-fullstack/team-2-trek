@@ -1,52 +1,56 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>World Trekking</title>
     <link rel="stylesheet" type="text/css" href="./css/worldStyle.css">
 </head>
-
 <body>
-<div class="container">
-    <header class="header">
-        <button id="home"><a th:href="world">Home</a></button>
-        <button id="continent"><a th:href="continent">Continent</a></button>
-        <button id="region"><a th:href="region">Region</a></button>
-        <button id="trek"><a th:href="trek">Trek</a></button>
-        <button id="difficulty"><a th:href="difficulty">Difficulty</a></button>
-        <button id="addTrek">Create a Trek</button>
-    </header>
-    <div>
-        <h1><img src="\title.jpg"></h1>
+    <embed src="/music/serene.mp3" autostart="true" loop="true" hidden="true">
+    <div class="container">
+    <header>
+        <div class="container">
+            <header class="header">
+                <button id="home"><a th:href="mainpage">Home</a></button>
+                <button id="continent"><a th:href="continent">Continent</a></button>
+                <button id="region"><a th:href="region">Region</a></button>
+                <button id="trek"><a th:href="trek">Trek</a></button>
+                <button id="difficulty"><a th:href="difficulty">Difficulty</a></button>
+                <button id="addTrek">Create a Trek</button>
+            </header>
+        </div>
+        <div class="title-image"><img class="title" src="images/title.jpg"></div>
+        <div class="intro">
         <p>Discover your awaiting trekking adventure tour from a local day trek tour, a weekend trek trip, or your
             next trekking bucket list vacation of a lifetime.  Whether you join as a solo traveler, with your family, or
             your closest trek buddies, you'll be greeted by like-minded trekking professional guides.
             Leave the planning to us so you can free yourself and enjoy the experience.</p>
     </div>
-
+    </header>
     <main>
-        <p>CONTINENTS</p>
+    </main>
+        <p><a th:href="continent">CONTINENTS</a></p>
         <div th:each="continent: ${continentModel}">
             <a th:href="@{/continent(id=${continent.id})}">
                 <img th:src="${continent.imageUrl}"></a>
             <p th:text="${continent.title}"></p>
         </div>
 
-        <p>REGIONS</p>
+        <p><a th:href="region">REGIONS</a></p>
         <div th:each="region: ${regionModel}">
             <a th:href="@{/region(id=${region.id})}">
                 <img th:src="${region.imageUrl}"></a>
             <p th:text="${region.title}"></p>
         </div>
 
-        <p>TREKS</p>
+        <p><a th:href="trek">TREKS</a></p>
         <div th:each="trek: ${trekModel}">
             <a th:href="@{/trek(id=${trek.id})}">
                 <img th:src="${trek.imageUrl}"></a>
             <p th:text="${trek.title}"></p>
         </div>
 
-        <p>TYPES OF TREKS</p>
+        <p><a th:href="difficulty">TYPES OF TREKS</a></p>
         <div th:each="difficulty: ${difficultyModel}">
             <a th:href="@{/difficulty(id=${difficulty.id})}">
                 <img th:src="${difficulty.imageUrl}"></a>

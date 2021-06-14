@@ -6,11 +6,12 @@
     <link rel="stylesheet" type="text/css" href="./css/continentStyle.css">
 </head>
 <body>
+<embed src="/music/serene.mp3" autostart="true" loop="true" hidden="true">
 <div class="container">
     <header>
         <div class="container">
             <header class="header">
-                <button id="home"><a th:href="index">Home</a></button>
+                <button id="home"><a th:href="mainpage">Home</a></button>
                 <button id="continent"><a th:href="continent">Continent</a></button>
                 <button id="region"><a th:href="region">Region</a></button>
                 <button id="trek"><a th:href="trek">Trek</a></button>
@@ -18,6 +19,7 @@
                 <button id="addTrek">Create a Trek</button>
             </header>
         </div>
+        <div class="title-image"><img class="title" src="images/title.jpg"></div>
             <div class="intro">
         Most Iconic Treks by Continent.
         <p>Deciding the best trekking and most iconic treks by continents can be difficult and time consuming. Let us

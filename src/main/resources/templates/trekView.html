@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>World Trekking - Treks</title>
     <link rel="stylesheet" type="text/css" href="./css/trekStyle.css">
 </head>
 <body>
-<embed src="/music/serene.mp3" autostart="true" loop="true" hidden="true">
-<div class="container">
-    <header class="header">
-        <button id="home"><a th:href="index">Home</a></button>
-        <button id="continent"><a th:href="continent">Continent</a></button>
-        <button id="region"><a th:href="region">Region</a></button>
-        <button id="trek"><a th:href="trek">Trek</a></button>
-        <button id="difficulty"><a th:href="difficulty">Difficulty</a></button>
-        <button id="addTrek">Create a Trek</button>
-    </header>
-
-    <div class="intro">
+    <embed src="/music/serene.mp3" autostart="true" loop="true" hidden="true">
+    <div class="container">
+    <header>
+        <div class="container">
+            <header class="header">
+                <button id="home"><a th:href="mainpage">Home</a></button>
+                <button id="continent"><a th:href="continent">Continent</a></button>
+                <button id="region"><a th:href="region">Region</a></button>
+                <button id="trek"><a th:href="trek">Trek</a></button>
+                <button id="difficulty"><a th:href="difficulty">Difficulty</a></button>
+                <button id="addTrek">Create a Trek</button>
+            </header>
+        </div>
+        <div class="title-image"><img class="title" src="images/title.jpg"></div>
+        <div class="intro">
         Trekking Trips
         <p>If you are an adventurer, you would love being outdoor. The adrenaline rush you get from putting your life on
         line and coming victorious after winning over your fear is incomparable. Go on adventures to find out where you
@@ -28,7 +31,7 @@
         trekking adventure in one of the six continents! </p>
         <p>See all trekking tours that we offer below.</p>
     </div>
-
+    </header>
 
     <main>
         <div th:each="trek: ${trekModel}">
@@ -37,6 +40,7 @@
             <p th:text="${trek.title}"></p>
         </div>
     </main>
+
 </div>
 </div>
 </body>
