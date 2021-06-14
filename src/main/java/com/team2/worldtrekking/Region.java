@@ -46,9 +46,10 @@ public class Region {
 
     public Region() {}
 
-    public Region(String title, Continent continent/*, Trek...treks*/) {
+    public Region(String title, Continent continent, String imageUrl) {
         this.title = title;
         this.continent = continent;
+        this.imageUrl = imageUrl;
         /*this.treks = new ArrayList<>(Arrays.asList(treks));*/
     }
 
