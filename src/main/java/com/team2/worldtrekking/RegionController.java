@@ -21,9 +21,8 @@ public class RegionController {
     }
 
     @GetMapping("region/{title}")
-    public String displaySingleRegion(@PathVariable String title, Model model) {
-        Region retrievedRegion = regionRepo.findRegionByTitle(title); //finds a single region and populates it to {title}
+    public String displaySingleRegion(@PathVariable String id, Model model) {
+        Region retrievedRegion = regionRepo.findRegionById(id); //finds a single region and populates it to {title}
         model.addAttribute("region", retrievedRegion);
         return "regionsView";
     }
-}
