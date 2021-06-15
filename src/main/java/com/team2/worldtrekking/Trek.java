@@ -62,14 +62,6 @@ public class Trek {
     public Trek(String title, String difficulty, String description,
                 String price, String imageUrl, Continent continent){
 
-    public Trek(Long id, String title, String difficulty, String description,
-                 String price, String imageUrl, Continent continent){
-
-    public Trek(){}
-
-    public Trek( String title, String difficulty, String description,
-                 String price, String imageUrl, Continent continent){
-
         this.title = title;
 //        this.type = type;
         this.difficulty = difficulty;
@@ -78,6 +70,8 @@ public class Trek {
         this.imageUrl = imageUrl;
         this.continent = continent;
     }
+
+    public Trek(){}
 
     @Override
     public boolean equals(Object o) {
