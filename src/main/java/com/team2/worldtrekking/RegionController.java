@@ -25,4 +25,4 @@ public class RegionController {
         Region retrievedRegion = regionRepo.findRegionById(id); //finds a single region and populates it to {title}
         model.addAttribute("region", retrievedRegion);
         return "regionsView";
-    }
+    }}
