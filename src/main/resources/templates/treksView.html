@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>World Trekking - Treks</title>
+    <link rel="stylesheet" type="text/css" href="./css/trekStyle.css">
+</head>
+
+<body>
+    <div th:replace="header :: header"></div>
+
+        <div class="intro">
+            <h1>ALL TREKS TOURS</h1>
+            <p>If you are looking for an adventure, and love being outdoors, let World Trekking be your guide! The
+            adrenaline rush you get by trekking through difficult terrains and coming victorious after
+            overcoming your fears is incomparable within the list of available treks offered by World Trekking. Also
+            offered are, easy to moderate family trekking experiences. Check out these adventures to find out where
+            you truly belong. Trek with us and embrace the spectacular natures beauty!
+            When you are ready for an adventure, put your boots on, hike and trek with us. You can expect amazing
+            wildlife and breath-taking landscape scenery which provide adventurers rare cinematography and photography
+            opportunities. Coupled with the chance to travel with a group of like minded individuals or family who
+            love the great outdoors. Let us plan and be your guide for your once in a lifetime trekking adventures
+            in one of the six continents!</p>
+
+            <h3>See all trekking tours that we offer below.</h3>
+        </div>
+    </div>
+    </header>
+
+    <main>
+        <div th:each="trek: ${trekModel}">
+            <a th:href="@{/trek(id=${trek.id})}">
+                <img th:src="${trek.imageUrl}"></a>
+            <p th:text="${trek.title}"></p>
+        </div>
+    </main>
+
+</div>
+</div>
+
+<footer>
+    <small>&copy World Trekking 2021</small>
+</footer>
+</body>
+</html>

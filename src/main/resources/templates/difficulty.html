@@ -5,27 +5,17 @@
     <title>World Trekking - Difficulty Types</title>
     <link rel="stylesheet" type="text/css" href="./css/difficultStyle.css">
 </head>
+
 <body>
-    <embed src="/music/serene.mp3" autostart="true" loop="true" hidden="true">
-    <div class="container">
-    <header>
-        <div class="container">
-            <header class="header">
-                <button id="home"><a th:href="mainpage">Home</a></button>
-                <button id="continent"><a th:href="continent">Continent</a></button>
-                <button id="region"><a th:href="region">Region</a></button>
-                <button id="trek"><a th:href="trek">Trek</a></button>
-                <button id="difficulty"><a th:href="difficulty">Difficulty</a></button>
-                <button id="addTrek">Create a Trek</button>
-            </header>
-        </div>
-        <div class="title-image"><img class="title" src="images/title.jpg"></div>
-        <div class="intro">
-            Most Iconic Treks by difficulty types.
-            <p>Deciding the best trekking and most iconic treks by continents can be difficult and time consuming. Let us
-                help you narrow down your choices on the treks by continents. We have check them out ourselves and would love
-                you to follow us and be inspired to put your boots on in joining us on the trail.</p>
-        </div>
+    <div th:replace="header :: header"></div>
+
+    <div class="intro">
+        Most Iconic Treks by difficulty types.
+        <p>Deciding the best trekking and most iconic treks by continents can be difficult and time consuming. Let us
+            help you narrow down your choices on the treks by continents. We have check them out ourselves and would
+            love
+            you to follow us and be inspired to put your boots on in joining us on the trail.</p>
+    </div>
     </header>
 
     <main>

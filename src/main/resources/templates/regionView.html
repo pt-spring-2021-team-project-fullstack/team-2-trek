@@ -5,21 +5,10 @@
     <title>World Trekking - Regions</title>
     <link rel="stylesheet" type="text/css" href="./css/regionStyle.css">
 </head>
+
 <body>
-    <embed src="/music/serene.mp3" autostart="true" loop="true" hidden="true">
-    <div class="container">
-    <header>
-        <div class="container">
-            <header class="header">
-                <button id="home"><a th:href="mainpage">Home</a></button>
-                <button id="continent"><a th:href="continent">Continent</a></button>
-                <button id="region"><a th:href="region">Region</a></button>
-                <button id="trek"><a th:href="trek">Trek</a></button>
-                <button id="difficulty"><a th:href="difficulty">Difficulty</a></button>
-                <button id="addTrek">Create a Trek</button>
-            </header>
-        </div>
-        <div class="title-image"><img class="title" src="images/title.jpg"></div>
+    <div th:replace="header :: header"></div>
+
             <div class="intro">
                 Most Iconic Treks by Regions.
                 <p>Regions paragraph here</p>

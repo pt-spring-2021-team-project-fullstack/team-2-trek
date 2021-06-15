@@ -2,46 +2,31 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>World Trekking - Treks</title>
-    <link rel="stylesheet" type="text/css" href="./css/trekStyle.css">
+    <title>World Trekking - Single Trek</title>
+
 </head>
+
 <body>
-    <embed src="/music/serene.mp3" autostart="true" loop="true" hidden="true">
-    <div class="container">
-    <header>
-        <div class="container">
-            <header class="header">
-                <button id="home"><a th:href="mainpage">Home</a></button>
-                <button id="continent"><a th:href="continent">Continent</a></button>
-                <button id="region"><a th:href="region">Region</a></button>
-                <button id="trek"><a th:href="trek">Trek</a></button>
-                <button id="difficulty"><a th:href="difficulty">Difficulty</a></button>
-                <button id="addTrek">Create a Trek</button>
-            </header>
-        </div>
-        <div class="title-image"><img class="title" src="images/title.jpg"></div>
-        <div class="intro">
-        Trekking Trips
-        <p>If you are an adventurer, you would love being outdoor. The adrenaline rush you get from putting your life on
-        line and coming victorious after winning over your fear is incomparable. Go on adventures to find out where you
-        truly belong. Embrace the beauty of nature.</p>
-        <p>When you are ready for adventure, put your boots on, hike and trek with us. You can expect amazing
-        wildlife and landscape photography opportunities and the chance to travel with a group of
-        like minded individuals who love to be outdoors. Let us plan and be your guide for your once in a lifetime
-        trekking adventure in one of the six continents! </p>
-        <p>See all trekking tours that we offer below.</p>
-    </div>
-    </header>
+    <div th:replace="header :: header"></div>
+
+<div class="intro">
 
     <main>
+        <h1 th:text="${trekModel.title}"></h1>
+
+
+        <h4 th:text="${trekModel.price}"></h4>
+        <p th:text="${trekModel.description}"></p>
+
         <div th:each="trek: ${trekModel}">
             <a th:href="@{/trek(id=${trek.id})}">
-                <img id="image" th:src="${trek.imageUrl}"></a>
-            <p th:text="${trek.title}"></p>
+                <img th:src="${trek.imageUrl}"></a>
         </div>
-    </main>
 
+    </main>
 </div>
-</div>
+<footer>
+    <small>&copy World Trekking 2021</small>
+</footer>
 </body>
 </html>
