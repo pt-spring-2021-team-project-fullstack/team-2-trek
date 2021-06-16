@@ -22,7 +22,6 @@ public class Trek {
     private String description;
     private String price;
     private String imageUrl;
-//    private Boolean bookNow;
 
     @ManyToOne
     private Continent continent;
@@ -60,14 +59,8 @@ public class Trek {
         return imageUrl;
     }
 
-//    public Boolean getBookNow() {
-//        return bookNow;
-//    }
-
-    public Trek(){}
-
-    public Trek( String title, String difficulty, String description,
-                 String price, String imageUrl, Continent continent){
+    public Trek(String title, String difficulty, String description,
+                String price, String imageUrl, Continent continent){
 
         this.title = title;
 //        this.type = type;
@@ -75,9 +68,10 @@ public class Trek {
         this.description = description;
         this.price = price;
         this.imageUrl = imageUrl;
-//        this.bookNow = bookNow;
         this.continent = continent;
     }
+
+    public Trek(){}
 
     @Override
     public boolean equals(Object o) {
