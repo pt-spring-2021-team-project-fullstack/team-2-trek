@@ -159,6 +159,5 @@ public class Populator implements CommandLineRunner {
         trekRepo.save(trek22);
         trekRepo.save(trek23);
         trekRepo.save(trek24);
-
     }
 }

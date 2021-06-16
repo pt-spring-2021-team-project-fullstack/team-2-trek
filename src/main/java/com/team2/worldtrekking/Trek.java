@@ -27,12 +27,6 @@ public class Trek {
     private Region regions;
 
 
-/*    public Collection<Region> regions;
-
-    public Collection<Region> getRegion() {
-        return regions;
-    }*/
-
     public String getTitle() {
         return title;
     }

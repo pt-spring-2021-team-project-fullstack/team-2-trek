@@ -40,12 +40,17 @@ public class Continent {
         return imageUrl;
     }
 
-    public Continent(String title, String imageUrl){
+
+/*    public String getRegion() {
+        return region;
+    }*/
+
+public Continent(){}
+
+    public Continent(String title, String imageUrl, Region... regions){
         this.title = title;
         this.imageUrl = imageUrl;
     }
-
-    public Continent(){}
 
     @Override
     public boolean equals(Object o) {
