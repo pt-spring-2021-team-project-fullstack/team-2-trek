@@ -1,10 +1,10 @@
 package com.team2.worldtrekking;
 
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
-
 import javax.persistence.Entity;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -14,33 +14,33 @@ public class Trek {
     @Id
     @GeneratedValue
     private Long id;
-
     private String title;
-//    private String type;
     private String difficulty;
     @Lob
     private String description;
     private String price;
     private String imageUrl;
-//    private Boolean bookNow;
 
     @ManyToOne
     private Continent continent;
+    @ManyToOne
+    private Region regions;
 
-    public Long getId() {
-        return id;
-    }
 
     public String getTitle() {
         return title;
     }
 
-//    public String getType() {
-//        return type;
-//    }
-
     public String getDifficulty() {
         return difficulty;
+    }
+
+    public Region getRegion() {
+        return regions;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getDescription() {
@@ -51,7 +51,6 @@ public class Trek {
         return continent;
     }
 
-
     public String getPrice() {
         return price;
     }
@@ -60,23 +59,20 @@ public class Trek {
         return imageUrl;
     }
 
-//    public Boolean getBookNow() {
-//        return bookNow;
-//    }
-
     public Trek(){}
 
     public Trek( String title, String difficulty, String description,
-                 String price, String imageUrl, Continent continent){
+                 String price, String imageUrl, Continent continent, Region regions/*, Region...regions*/){
 
         this.title = title;
-//        this.type = type;
         this.difficulty = difficulty;
         this.description = description;
         this.price = price;
         this.imageUrl = imageUrl;
-//        this.bookNow = bookNow;
         this.continent = continent;
+        this.regions = regions;
+        /*this.regions = new ArrayList<>(Arrays.asList(regions));*/
+
     }
 
     @Override
