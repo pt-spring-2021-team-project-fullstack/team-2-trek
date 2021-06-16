@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>World Trekking - Difficulty Types</title>
+    <link rel="stylesheet" type="text/css" href="./css/difficultStyle.css">
+</head>
+
+<body>
+    <div th:replace="header :: header"></div>
+
+    <div class="intro">
+        Most Iconic Treks by difficulty types.
+        <p>Deciding the best trekking and most iconic treks by continents can be difficult and time consuming. Let us
+            help you narrow down your choices on the treks by continents. We have check them out ourselves and would
+            love
+            you to follow us and be inspired to put your boots on in joining us on the trail.</p>
+    </div>
+    </header>
+
+    <main>
+        <div th:each="difficulty: ${difficultyModel}">
+            <a th:href="@{/difficulty(id=${difficulty.id})}">
+                <img th:src="${difficulty.imageUrl}"></a>
+            <p th:text="${difficulty.title}"></p>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <small>&copy World Trekking 2021</small>
+</footer>
+
+</body>
+</html>
