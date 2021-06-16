@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>World Trekking - Regions</title>
+  <link rel="stylesheet" type="text/css" href="./css/regionStyle.css">
+</head>
+
+
+<body>
+<div th:replace="header :: header"></div>
+
+<div class="intro">
+  Most Iconic Treks by Regions.
+  <p>Regions paragraph here</p>
+</div>
+</header>
+
+<main>
+  <div th:each="region: ${regionModel}">
+    <a th:href="@{/region(id=${region.id})}">
+      <img th:src="${region.imageUrl}"></a>
+    <p th:text="${region.title}"></p>
+  </div>
+</main>
+
+
+<footer>
+  <small>&copy World Trekking 2021</small>
+</footer>
+
+</body>
+</html>

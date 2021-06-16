@@ -3,17 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>World Trekking - Single Trek</title>
-
 </head>
-
 <body>
     <div th:replace="header :: header"></div>
-
 <div class="intro">
-
     <main>
         <h1 th:text="${trekModel.title}"></h1>
-
 
         <h4 th:text="${trekModel.price}"></h4>
         <p th:text="${trekModel.description}"></p>
@@ -22,7 +17,6 @@
             <a th:href="@{/trek(id=${trek.id})}">
                 <img th:src="${trek.imageUrl}"></a>
         </div>
-
     </main>
 </div>
 <footer>
