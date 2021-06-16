@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>World Trekking - Regions</title>
+    <link rel="stylesheet" type="text/css" href="./css/regionStyle.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        Regional Trekking
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor rhoncus lorem id auctor. Proin nec quam scelerisque, efficitur libero eget, maximus elit. Donec gravida mi vel fermentum maximus. Proin commodo efficitur mauris sit amet bibendum. Phasellus non fermentum tortor. In lacinia lorem vitae velit sodales cursus. Proin venenatis, sem quis finibus mattis, lacus ipsum ornare justo, eu placerat elit felis id elit. Quisque varius lorem ex, eu fringilla enim rhoncus sed. Integer quis nisl eu eros egestas viverra at eget turpis. Vestibulum vulputate ante non laoreet lacinia. Mauris suscipit blandit ipsum, nec tempor lacus ornare ac. Sed gravida tortor in dolor fringilla, ut laoreet velit vehicula. Nulla porttitor magna non enim rhoncus, in tincidunt justo suscipit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor rhoncus lorem id auctor. Proin nec quam scelerisque, efficitur libero eget, maximus elit. Donec gravida mi vel fermentum maximus. Proin commodo efficitur mauris sit amet bibendum. Phasellus non fermentum tortor. In lacinia lorem vitae velit sodales cursus. Proin venenatis, sem quis finibus mattis, lacus ipsum ornare justo, eu placerat elit felis id elit. Quisque varius lorem ex, eu fringilla enim rhoncus sed. Integer quis nisl eu eros egestas viverra at eget turpis. Vestibulum vulputate ante non laoreet lacinia. Mauris suscipit blandit ipsum, nec tempor lacus ornare ac. Sed gravida tortor in dolor fringilla, ut laoreet velit vehicula. Nulla porttitor magna non enim rhoncus, in tincidunt justo suscipit. </p>
+        <p>See all trekking tours that we offer below.</p>
+    </header>
+
+    <main>
+        <div th:each="region: ${regionModel}">
+            <a th:href="@{/region(id=${region.id})}">
+                <img id="image" th:src="${region.imageUrl}"></a>
+            <p th:text="${region.title}"></p>
+            <p th:text="${region.continent}"></p>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
