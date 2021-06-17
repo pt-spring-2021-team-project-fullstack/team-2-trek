@@ -53,3 +53,8 @@ h1 {
     margin: 0 auto;
     padding-bottom: 1em;
 }
+
+h2 {
+    font-size: 1.5em;
+    text-shadow: 1px 1px #888888;
+}
