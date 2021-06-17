@@ -1,0 +1,20 @@
+/* Container holding the image and the text */
+.footer {
+    background-color: #808080;
+    position: relative;
+    text-align: center;
+}
+
+/* Bottom centered text */
+.bottom-centered {
+  position: absolute;
+  top: 50%%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*image */
+.img{
+    height: 36%;
+    width: 100%;
+}

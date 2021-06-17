@@ -12,14 +12,14 @@
 
 body {
     margin: 1em auto;
-    max-width: 60%;
-    width: 90%;
+    max-width: 80%;
+    width: 80%;
 }
 
 .intro {
     position: relative;
     top: -16px;
-    background-color: #d3d3d3;
+    background-color: #b19cd9;
     padding: .25em .5em;
     margin 0 1em;
 }

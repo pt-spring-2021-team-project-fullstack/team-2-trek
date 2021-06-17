@@ -9,9 +9,16 @@
 
 body {
     margin: 1rem auto;
-    max-width: 60%;
-    width: 90%;
+    max-width: 80%;
+    width: 80%;
 }
+
+h1,
+h2,
+h3 {
+  color: purple;
+}
+
 
 img {
 
@@ -19,7 +26,7 @@ img {
 
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 9px;
     grid-row-gap: 1px;
 }
@@ -31,18 +38,7 @@ main img {
     width: 300px;
 }
 
-footer {
-    background-color: white;
-    bottom: 0;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    position: fixed;
-    right: 0;
-}
-
 main img:hover {
-    border: 3px solid blue;
+    border: 3px solid purple;
     transition: .5s;
-    transform: scale(2);
 }

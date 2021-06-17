@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>World Trekking - Single Trek</title>
+    <link rel="stylesheet" type="text/css" href="./css/individualTrekStyle.css">
 </head>
 <body>
     <div th:replace="header :: header"></div>
 <div class="intro">
     <main>
         <h1 th:text="${trekModel.title}"></h1>
-
-        <h4 th:text="${trekModel.price}"></h4>
-        <p th:text="${trekModel.description}"></p>
-
         <div th:each="trek: ${trekModel}">
             <a th:href="@{/trek(id=${trek.id})}">
                 <img th:src="${trek.imageUrl}"></a>
         </div>
+        <h3>Price: </h3>
+        <p th:text="${trekModel.price}"></p>
+        <h3>Description of the Trek:</h3>
+        <p th:text="${trekModel.description}"></p>
     </main>
 </div>
-<footer>
-    <small>&copy World Trekking 2021</small>
-</footer>
 </body>
+<div th:replace="footer :: footer"></div>
 </html>
