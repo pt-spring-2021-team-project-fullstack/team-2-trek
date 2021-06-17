@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>World Trekking - Regions</title>
+    <link rel="stylesheet" type="text/css" href="./css/regionsStyle.css">
+</head>
+
+<body>
+<div th:replace="header :: header"></div>
+
+<div class="intro">
+    <h1>Most Iconic Treks by Regions.</h1>
+    <p>We offer a range of day treks, guided trek, and multi-day adventures suitable for a range of fitness levels and
+    time schedules. Depending on your personal needs and requirements, you are able to tailor your trekking
+    schedule to fit with your preferences and travel plans. From day treks to multi-day guided or non-guided
+    hikes, our flexibility maximizes your enjoyment and time in the region. Here are a list of regions of our
+    treks.</p>
+</div>
+</header>
+
+<main>
+    <div th:each="region: ${regionModel}">
+        <a th:href="@{/region(id=${region.id})}">
+            <img th:src="${region.imageUrl}"></a>
+        <p th:text="${region.title}"></p>
+    </div>
+</main>
+
+
+</body>
+<div th:replace="footer :: footer"></div>
+</html>

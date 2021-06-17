@@ -31,7 +31,9 @@ public class Difficulty {
         return imageUrl;
     }
 
+    public Difficulty() {
 
+    }
 
     public Difficulty(String difficultyLevel, String description, String imageUrl) {
         this.difficultyLevel = difficultyLevel;
