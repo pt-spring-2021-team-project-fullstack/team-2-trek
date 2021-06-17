@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>About Page</title>
-    <link rel="stylesheet" type="text/css" href="/css/aboutStyle.css">
+    <link rel="stylesheet" type="text/css" href="./css/aboutStyle.css">
 </head>
 <body>
-    <div class="container about">
-        <header></header>
-        <main>
-            <section class="top"></section>
-            <h1>About Us</h1>
-            <p>Meet our team! Learn about the brains, brawns, and beautes behind the amazing World Trekking Co. We're a very diverse
-                group, with a crazy array of personalities, brilliant list of talents, and especially, the most unique designs of nature.</p>
+        <div th:replace="header :: header"></div>
+        <div class="container">
+            <section class="intro">
+                <h1>Meet Our Team</h1>
+                <p class="intro-text">Here are the brains, brawns, and beautes behind the amazing World Trekking Co. We're a very diversegroup, with a crazy array of personalities, brilliant list of talents, and especially, the most unique designs of nature.</p>
+            </section>
             <section class="profiles">
                 <div class="profile">
                     <h2>Yuli</h2>
-                    <img src="/images/yuli.png" alt="Yuli's image">
+                    <img src="/images/yuli.jpeg" alt="Yuli's image">
                     <p>Yuli is the truly the superhero of the superheroes. She does everything every superhero that ever existed can
                     do, aaannnnd basketweaves.</p>
                 </div>
@@ -51,8 +50,7 @@
                     with a copy of your resume. Make sure to include a sampling of the qualities that make you crazy/silly/odd/fun.</p>
                 </div>
             </section>
-        </main>
+        </div>
         <footer></footer>
-    </div>>
 </body>
 </html>
