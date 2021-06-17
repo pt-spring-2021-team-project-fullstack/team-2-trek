@@ -10,8 +10,8 @@
 
 body {
     margin: 1em auto;
-    max-width: 60%;
-    width: 90%;
+    max-width: 80%;
+    width: 80%;
 }
 
 main {
@@ -26,15 +26,6 @@ main img {
     border-radius: 6px;
 }
 
-footer {
-    background-color: white;
-    bottom: 0;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    position: fixed;
-    right: 0;
-}
 
 main img:hover {
     border: 2px solid #999;
