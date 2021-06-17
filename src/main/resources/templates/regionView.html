@@ -9,19 +9,21 @@
 
 <body>
 <div th:replace="header :: header"></div>
-
 <div class="intro">
     <main>
-        <h1 th:text="${regionModel.title}"></h1>
-
+        <div th:each="continent: ${continentModel}">
+            <a th:href="@{/continent(id=${continent.id})}">
+                <img th:src="${continent.imageUrl}"></a>
+            <p th:text="${continentModel.title}"></p>
+        </div>
         <div th:each="region: ${regionModel}">
             <a th:href="@{/region(id=${region.id})}">
                 <img th:src="${region.imageUrl}"></a>
+            <p th:text="${region.title}"></p>
         </div>
     </main>
+
 </div>
-<footer>
-    <small>&copy World Trekking 2021</small>
-</footer>
 </body>
+<div th:replace="footer :: footer"></div>
 </html>

@@ -8,8 +8,7 @@
 
 <body>
 
-    <div th:replace="header :: header"></div>
-    <embed src="/music/serene.mp3" autostart="false" loop="true" hidden="false">
+<div th:replace="header :: header"></div>
 
 <div class="intro">
     <p>Discover your awaiting trekking adventure tour from a local day trek tour, a weekend trek trip, or your
@@ -17,84 +16,123 @@
         your closest trek buddies, you'll be greeted by like-minded trekking professional guides.
         Leave the planning to us so you can free yourself and enjoy the experience.</p>
 </div>
-</header>
+
 <main>
+    <div id="products">
+        <article>
+            <h3><p><a th:href="continent">CONTINENTS</a></p></h3>
+            <p>We currently offer trek trips in 6 different continents: North America, South America, Europe, Asia,
+                Africa, and Australia. Antarctica trek trips are coming soon.</p>
+            <div id="continents">
+                <p><a th:href="continent"><img class="continents" src="images/Continents.png" alt="continents">
+                </a></p>
+            </div>
+        </article>
+
+        <article>
+            <h3><p><a th:href="regions">REGIONS</a></p></h3>
+            <p>Ask experienced hikers for the best trek in the world and each will give you a different answer. But
+                among the heated debates, here are a few famous regions for walking trails we offer. </p>
+            <div class="regions">
+                <p><a th:href="region"><img class="regions" src="images/Regions1.jpg" alt="North America Region"></a></p>
+                <p><a th:href="region"><img class="regions" src="images/Regions2.jpg" alt="Asia Region"></a></p>
+                <p><a th:href="region"><img class="regions" src="images/Regions3.jpg" alt="South America Region"></a></p>
+                <p><a th:href="region"><img class="regions" src="images/Regions4.png" alt="Europe Region"></a></p>
+                <p><a th:href="region"><img class="regions" src="images/Regions5.png" alt="Australia Region"></a></p>
+                <p><a th:href="region"><img class="regions" src="images/Regions6.jpg" alt="Africa Region"></a></p>
+            </div>
+        </article>
+
+        <article>
+            <h3><p><a th:href="treks">TREKS</a></p></h3>
+            <p>The best treks in the worlds are no walks in the park. But they're sure to challenge you physically and
+                mentally, while amplifying country view. Check out the treks we think are best.</p>
+            <div class="treks">
+                <p><a th:href="treks"><img class="treks" src="images/tourDuMontBlanc2.jpg"
+                                            alt="Tour Du Mont Blanc Trek"></a>
+                </p>
+                <p><a th:href="treks"><img class="treks" src="images/torresDelPaine2.jpg" alt="Torres Del Paine Trek"></a>
+                </p>
+                <p><a th:href="treks"><img class="treks" src="images/caminoDeSantiago2.jpg"
+                                            alt="Camino De Santiago Trek"></a>
+                </p>
+                <p><a th:href="treks"><img class="treks" src="images/fitzroyTrek2.jpg"
+                                            alt="Fitzroy Trek"></a>
+                </p>
+                <p><a th:href="treks"><img class="treks" src="images/torresDelPaine1.jpg" alt="Torres Del Paine Trek"></a>
+                </p>
+                <p><a th:href="treks"><img class="treks" src="images/lostCityOfTeyuna2.jpg"
+                                            alt="Lost City of Teyuna Trek"></a>
+                </p>
+            </div>
+        </article>
+
+        <article>
+            <h3><p><a th:href="difficulty">TYPES OF TREKS</a></p></h3>
+            <p>We offer 4 trek types: easy, moderate, strenuous, and difficult through scenic remote destinations that
+                can be physically & mentally challenging. </p>
+            <div id="difficulty">
+                <p><a th:href="difficulty"><img class="difficulty" src="images/difficulty.jpg" alt="Difficulty Level">
+                </a></p>
+            </div>
+        </article>
+
+    </div>
+
+    <h1><p>WHY CHOOSE US?</p></h1>
+
+    <div id="whyChooseUs">
+
+        <article>
+            <h3><p>OUR TREKKERS</p></h3>
+            <div id="trekkers">
+                <p><img class="trekkers" src="images/trekkers.jpg" alt="trekkers">
+                    </a></p>
+            </div>
+            <p>World Trekking guides are fierce and experts who expect to return home from adventure tours with a few
+                scrapes and bruises along with revived gratitude of life. Together, we are community of nature lovers
+                drawn together by challenging adventure. We are real fun professional who want to embark on real
+                adventures.</p>
+        </article>
+
+        <article>
+            <h3><p>OUR ADVENTURES</p></h3>
+            <div id="adventure">
+                <p><img class="adventure" src="images/adventure.png" alt="adventure">
+                    </a></p>
+            </div>
+            <p>We look at an adventure destination through the eyes of our eight-year-old daring selves.
+                We always want to immerse fun, play, and challenge in during hiking. Then we let our imaginations run
+                wild. The result is BOLD FANTASTIC trekking that is proudly empowering, and life changing.</p>
+        </article>
+
+        <article>
+            <h3><p>OUR TEAM</p></h3>
+            <div id="teams">
+                <p><img class="teams" src="images/teams.jpg" alt="teams">
+                    </a></p>
+            </div>
+            <p>Our mission is to "fulfill your trekking experience that you never dreamed possible." This mission
+                empower us to find our edge in fantastic trekking experience so you can push yours. We are world
+                trekking experts advocate with your experience in mind - from an idea to a reality adventure</p>
+        </article>
+
+        <article>
+            <h3><p><a th:href="about">ABOUT US</a></p></h3>
+            <div id="about">
+                <p><img class="about" src="images/aboutUs.gif" alt="about us">
+                    </a></p>
+            </div>
+            <p>Throughout our lifetime, we introduce ourselves to hundreds of new people everywhere we go.
+                Every time we strike up a conversation with a stranger sitting next to us on the train, duck into a
+                gas station to ask for directions or step up to the checkout counter, we’re constantly coming up
+                with new, creative ways to introduce ourselves in line with the circumstances.
+                Head over to About Us page to get to know us more.</p>
+        </article>
+
+    </div>
 </main>
-<p><a th:href="continent">CONTINENTS</a></p>
-<div th:each="continent: ${continentModel}">
-    <a th:href="@{/continent(id=${continent.id})}">
-        <img th:src="${continent.imageUrl}"></a>
-    <p th:text="${continent.title}"></p>
-</div>
-
-<p><a th:href="region">REGIONS</a></p>
-<div th:each="region: ${regionModel}">
-    <a th:href="@{/region(id=${region.id})}">
-        <img th:src="${region.imageUrl}"></a>
-    <p th:text="${region.title}"></p>
-</div>
-
-<p><a th:href="trek">TREKS</a></p>
-<div th:each="trek: ${trekModel}">
-    <a th:href="@{/trek(id=${trek.id})}">
-        <img th:src="${trek.imageUrl}"></a>
-    <p th:text="${trek.title}"></p>
-</div>
-
-<p><a th:href="difficulty">TYPES OF TREKS</a></p>
-<div th:each="difficulty: ${difficultyModel}">
-    <a th:href="@{/difficulty(id=${difficulty.id})}">
-        <img th:src="${difficulty.imageUrl}"></a>
-    <p th:text="${difficulty.title}"></p>
-</div>
-
-<p>WHY CHOOSE US?</p>
-<p>OUR WORLD TREKKING COMPANY</p>
-<article>paragraph here</article>
-<p>OUR TREKKING ADVENTURES</p>
-<article>paragraph here</article>
-<p>OUR TEAM</p>
-<article>paragraph here</article>
-<button id="aboutUs"><a th:href="about">About Us</a></button>
-</main>
-
-<div class="container">
-    <header>
-        <h1><img src="/title.jpg"></h1>
-        <p>Discover your awaiting trekking adventure tour from a local day trek tour, a weekend trek trip, or your
-            next trekking bucket list vacation of a lifetime.  Whether you join as a solo traveler, with your family, or
-            your closest trek buddies, you'll be greeted by like-minded trekking professional guides.
-            Leave the planning to us so you can free yourself and enjoy the experience.</p>
-    </header>
-
-    <main>
-        <div th:each="continent: ${continentModel}">
-            <a th:href="@{/continent(id=${continent.id})}">
-                <img th:src="${continent.imageUrl}"></a>
-            <p th:text="${continent.title}"></p>
-        </div>
-        <div th:each="region: ${regionModel}">
-            <a th:href="@{/region(id=${region.id})}">
-                <img th:src="${region.imageUrl}"></a>
-            <p th:text="${region.title}"></p>
-        </div>
-        <div th:each="trek: ${trekModel}">
-            <a th:href="@{/trek(id=${trek.id})}">
-                <img th:src="${trek.imageUrl}"></a>
-            <p th:text="${trek.title}"></p>
-        </div>
-        <div th:each="difficulty: ${difficultyModel}">
-            <a th:href="@{/difficulty(id=${difficulty.id})}">
-                <img th:src="${difficulty.imageUrl}"></a>
-            <p th:text="${difficulty.title}"></p>
-        </div>
-    </main>
-
-</div>
-
-<footer>
-    <small>&copy World Trekking 2021</small>
-</footer>
 
 </body>
+<div th:replace="footer :: footer"></div>
 </html>
