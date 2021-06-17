@@ -2,57 +2,66 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>About Page</title>
-    <link rel="stylesheet" type="text/css" href="/css/aboutStyle.css">
+    <title>World Trekking - About Us</title>
+    <link rel="stylesheet" type="text/css" href="./css/aboutStyle.css">
 </head>
 <body>
-    <div class="container about">
-        <header></header>
-        <main>
-            <section class="top"></section>
-            <h1>About Us</h1>
-            <p>Meet our team! Learn about the brains, brawns, and beautes behind the amazing World Trekking Co. We're a very diverse
-                group, with a crazy array of personalities, brilliant list of talents, and especially, the most unique designs of nature.</p>
+        <div th:replace="header :: header"></div>
+        <div class="container">
+            <section class="intro">
+                <h1>Meet Our Team!</h1>
+                <p class="intro-text">Here are the brains, brawns, and beautes behind the amazing World Trekking Co.
+                    We're a very diverse group, with a crazy array of personalities, brilliant list of talents, and
+                    above all, are the most unique designs of nature.</p>
+            </section>
             <section class="profiles">
                 <div class="profile">
                     <h2>Yuli</h2>
-                    <img src="/images/yuli.png" alt="Yuli's image">
-                    <p>Yuli is the truly the superhero of the superheroes. She does everything every superhero that ever existed can
-                    do, aaannnnd basketweaves.</p>
+                    <img src="/images/yuli.jpeg" alt="Yuli's image">
+                    <p class="profile-text">Yuli is truly the superhero of ALL superheroes. She does everything every superhero that ever
+                        existed can
+                    do, aaannnnd....... basketweaves!</p>
                 </div>
                 <div class="profile">
                     <h2>Randy</h2>
                     <img src="/images/randy.png" alt="Randy's image">
-                    <p>Randy is the sweetest bee with the bestest honey in the world. But he has a mischievous streak. He'll trap you
+                    <p class="profile-text">Randy is the sweetest bee with the bestest honey in the world. But he has a mischievous
+                        streak. He'll trap you
                         with that sticky honey and grill you if you get too close.</p>
                 </div>
                 <div class="profile">
                     <h2>Jordan</h2>
                     <img src="/images/jordan.png" alt="Jordan's image">
-                    <p>Jordan is everyone's favorite one-eyed, one-legged pirate ever. He may look scary on the outside, but he has the
+                    <p class="profile-text">Jordan is everyone's favorite one-eyed, one-legged pirate ever. He may look
+                        scary on the
+                        outside, but he has the
                         softest, squishiest heart. He really just wears that patch to cover the eye from which he cries easily.</p>
                 </div>
                 <div class="profile">
                     <h2>Kouric</h2>
                     <img src="/images/kouric.png" alt="Kouric's image">
-                    <p>Kouric is the best friend Randy wished he had. Energetic and optimistic, he too has a mischievous streak.
+                    <p class="profile-text">Kouric is the best friend Randy wished he had. Energetic and optimistic, he too has a
+                        mischievous streak.
                     Aside from catching flies in his spare time, his favorite activity is bouncing.</p>
                 </div>
                 <div class="profile">
                     <h2>Kit</h2>
                     <img src="/images/kit.png" alt="Kit's image">
-                    <p>Kit is just a goofy penguin. Not much else to her. Really. She spends a lot of time wishing she could fly.
+                    <p class="profile-text">Kit is just a goofy penguin. Not much else to her. Really. She spends a lot of time wishing
+                        she could fly.
                         And eating krill, squid, and crabs.</p>
                 </div>
                 <div class="profile">
                     <h2>You!</h2>
                     <img src="/images/you.png" alt="Tweety bird">
-                    <p>Does this look like you? Would you like to join our fun, adventurous team? Yes, we're hiring! Email us
+                    <p class="profile-text"><span id="italics">Does this look like you?</span> Would you like to join our fun,
+                        adventurous team?
+                        Yes, we're
+                        hiring! Email us
                     with a copy of your resume. Make sure to include a sampling of the qualities that make you crazy/silly/odd/fun.</p>
                 </div>
             </section>
-        </main>
+        </div>
         <footer></footer>
-    </div>>
 </body>
 </html>
