@@ -15,7 +15,7 @@ public class DifficultyController {
     @RequestMapping("/difficulty")
     public String displayDifficulties(Model model){
         model.addAttribute("difficultiesModel", difficultyRepo.findAll());
-        return "return difficultyView";
+        return "difficulty";
 
     }
 
