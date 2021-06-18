@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./css/addTrekStyle.css">
 
 </head>
-<body>
+<body background="images/mountains.jpg">
   <div th:replace="header :: header"></div>
   <form action="/add-trek" method="POST"  enctype="multipart/form-data">
     <input type="text" name="title" placeholder="Enter Title of the trek">
@@ -19,4 +19,5 @@
     <button type="submit">Add a Trek</button>
   </form>
 </body>
+<div th:replace="footer :: footer"></div>
 </html>
