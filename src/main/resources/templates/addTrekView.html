@@ -8,14 +8,13 @@
 </head>
 <body>
   <div th:replace="header :: header"></div>
-  <form action="/add-trek" method="POST">
+  <form action="/add-trek" method="POST"  enctype="multipart/form-data">
     <input type="text" name="title" placeholder="Enter Title of the trek">
     <input type="text" name="description" placeholder="Enter brief description">
     <input type="text" name="continent" placeholder="Enter continent">
     <input type="text" name="region" placeholder="Enter region">
     <input type="text" name="difficulty" placeholder="Enter difficulty">
-    <input type="text" name="price" placeholder="Enter price">
-    <input type="text" name="imageUrl" placeholder="Enter url for image">
+    <input type="file" name="image" accept="image/png, image/jpeg"/>
 
     <button type="submit">Add a Trek</button>
   </form>
