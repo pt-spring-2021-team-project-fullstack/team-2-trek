@@ -13,7 +13,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        exposeDirectory("add-trek", registry);
+        exposeDirectory("trek/", registry);
     }
 
     private void exposeDirectory(String dirName, ResourceHandlerRegistry registry) {

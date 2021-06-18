@@ -37,7 +37,7 @@ public class Trek {
     public String getPhotosImagePath() {
         if (image == null || id == null) return null;
 
-        return "/trek/" + id + "/" + image;
+        return "treks/" + id + "/" + image;
     }
 
     public Trek(String title, String description, Continent continent, Region region, Difficulty difficulty, String image) {
@@ -46,6 +46,7 @@ public class Trek {
         this.continent = continent;
         this.region = region;
         this.difficulty = difficulty;
+        this.image = image;
     }
 
 
