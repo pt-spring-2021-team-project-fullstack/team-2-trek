@@ -22,9 +22,6 @@ public class TrekController {
     @Resource
     private DifficultyRepository difficultyRepo;
 
-//    @Resource
-//    private difficultyRepository difficultyRepo;
-
     @RequestMapping("/treks")
     public String displayTreks(Model model) {
         model.addAttribute("trekModel", trekRepo.findAll());
@@ -39,12 +36,18 @@ public class TrekController {
         return "TrekView";
     }
 
+    @RequestMapping("/add-trek")
+    public String displayForm(Model model){
+        return "addTrekView";
+    }
+
     @PostMapping("/add-trek")
     public String addTrek(@RequestParam String title, @RequestParam String description,@RequestParam String continent, @RequestParam String region, @RequestParam String difficulty) {
         Continent continentToAdd;
         Region regionToAdd;
         Difficulty difficultyToAdd;
 
+        Optional<Trek> trekToAddOpt = trekRepo.findByTitle(title);
         Optional<Continent> continentToAddOpt = continentRepo.findByTitle(title);
         Optional<Region> regionToAddOpt = regionRepo.findByTitle(title);
         Optional<Difficulty> difficultyToAddOpt = difficultyRepo.findByDifficulty(difficulty);
@@ -70,7 +73,6 @@ public class TrekController {
             difficultyToAdd = difficultyToAddOpt.get();
         }
 
-        Optional<Trek> trekToAddOpt = trekRepo.findByTitle(title);
 
         if(trekToAddOpt.isEmpty()){
 
@@ -94,10 +96,10 @@ public class TrekController {
         return "regionView";
     }
 
-//    @GetMapping("difficulties/{title}")
-//    public String displaySingleDifficulty(@PathVariable String title, Model model){
-//        Optional<Difficulty> retrievedDifficulty = difficultyRepo.findByTitle(title);
-//        model.addAttribute("difficultyModel", retrievedDifficulty.get());
-//        return "difficultyView";
-//    }
+    @GetMapping("difficulties/{difficulty}")
+    public String displaySingleDifficulty(@PathVariable String difficulty, Model model){
+        Optional<Difficulty> retrievedDifficulty = difficultyRepo.findByDifficulty(difficulty);
+        model.addAttribute("difficultyModel", retrievedDifficulty.get());
+        return "difficultyView";
+    }
 }
