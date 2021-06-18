@@ -1,4 +1,4 @@
-* {
+ {
     box-sizing: border-box;
     font-family: sans-serif;
     line-height: 1.618em;
@@ -7,7 +7,8 @@
     text-align: center;
 }
 .container {
-    margin: 0 .5em 0 .6em;
+    margin: 0 auto;
+    max-width: 94.5%;
 }
 
 body {
@@ -18,10 +19,8 @@ body {
 
 .intro {
     position: relative;
-    top: -16px;
-    background-color: #b19cd9;
-    padding: .25em .5em;
-    margin 0 1em;
+    top: -10px;
+    background: rgba(206,193,231, .2);
 }
 
 .profiles {
@@ -45,6 +44,7 @@ body {
 h1 {
     font-size:3em;
     margin: .3em 0 .2em 0;
+    text-shadow: .02em .02em #fff;
 }
 
 .intro-text {
@@ -57,11 +57,19 @@ h1 {
 
 h2 {
     font-size: 1.5em;
-    text-shadow: 1px 1px #e1c8cd;
+    text-shadow: 1px 1px #404040;
 }
 
 .profile-text {
+    font-size: 1em;
     text-align: left;
+    color: white;
+    margin: 1em;
+    text-shadow: .09em .09em #000000;
+}
+
+.profile {
+    background: rgba(0,0,0, .2);
 }
 
 #italics {
