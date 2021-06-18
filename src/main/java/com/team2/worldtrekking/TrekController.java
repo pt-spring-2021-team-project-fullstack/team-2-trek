@@ -96,7 +96,7 @@ public class TrekController {
         return "regionView";
     }
 
-    @GetMapping("difficulties/{difficulty}")
+    @GetMapping("difficulties/{title}")
     public String displaySingleDifficulty(@PathVariable String title, Model model){
         Optional<Difficulty> retrievedDifficulty = difficultyRepo.findByTitle(title);
         model.addAttribute("difficultyModel", retrievedDifficulty.get());
