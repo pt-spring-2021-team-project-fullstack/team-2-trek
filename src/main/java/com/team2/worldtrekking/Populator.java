@@ -28,15 +28,16 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Difficulty easy = new Difficulty("Easy");
-        Difficulty moderate = new Difficulty("Moderate");
-        Difficulty strenuous = new Difficulty("Strenuous");
-        Difficulty difficult = new Difficulty("Difficult");
+        Difficulty easy = new Difficulty("Easy", "images/fitzroyTrek1.jpg");
+        Difficulty moderate = new Difficulty("Moderate", "images/kungsleden1.jpeg");
+        Difficulty strenuous = new Difficulty("Strenuous", "images/kilimanjaro1.jpg");
+        Difficulty difficult = new Difficulty("Difficult", "images/snowmanTrek1.jpg");
 
         difficultyRepo.save(easy);
         difficultyRepo.save(moderate);
         difficultyRepo.save(strenuous);
         difficultyRepo.save(difficult);
+
 
         Continent asia = new Continent("Asia","images/asia.jpg");
         Continent africa = new Continent("Africa","images/africa.jpg");
@@ -51,6 +52,7 @@ public class Populator implements CommandLineRunner {
         continentRepo.save(australia);
         continentRepo.save(europe);
         continentRepo.save(northAmerica);
+
 
         Region midWest = new Region("MidWest", northAmerica, "images/midwest.jpg");
         Region atlantic = new Region("Atlantic", northAmerica, "images/atlantic.jpg");
@@ -97,8 +99,6 @@ public class Populator implements CommandLineRunner {
         regionRepo.save(africaGreatLakes);
         regionRepo.save(gilgitBaltistan);
         regionRepo.save(corsica);
-
-
 
 
         String description1 = "This ancient trade route has been open to foreign trekkers since 1977 and is one of the most beautiful hikes on the planet. The total length of the route varies between 100 and145 miles, and takes anywhere from 15 to 25 days to complete depending on your speed. The highlights include reaching an altitude of almost 18,000 feet at Thorung La summit pass and watching the sun rise over towering peaks at Poon Hill. Leave your camping gear at home; there are cheap hotels all along the route.";
