@@ -26,13 +26,27 @@ public class Trek {
     @ManyToOne
     private Region region;
 
+    @Column(nullable = true, length=64)
+    private String image;
 
-    public Trek(String title, String description, Continent continent, Region region, Difficulty difficulty) {
+    public String getImage() {
+        return image;
+    }
+
+    @Transient
+    public String getPhotosImagePath() {
+        if (image == null || id == null) return null;
+
+        return "treks/" + id + "/" + image;
+    }
+
+    public Trek(String title, String description, Continent continent, Region region, Difficulty difficulty, String image) {
         this.title = title;
         this.description = description;
         this.continent = continent;
         this.region = region;
         this.difficulty = difficulty;
+        this.image = image;
     }
 
 

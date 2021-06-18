@@ -2,10 +2,16 @@ package com.team2.worldtrekking;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.IOException;
+import java.util.Objects;
 import java.util.Optional;
+
+import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;
 
 @Controller
 public class TrekController {
@@ -41,16 +47,25 @@ public class TrekController {
         return "addTrekView";
     }
 
-    @PostMapping("/add-trek")
-    public String addTrek(@RequestParam String title, @RequestParam String description,@RequestParam String continent, @RequestParam String region, @RequestParam String difficulty) {
+    @RequestMapping (value="add-trek",method = RequestMethod.POST)
+    public String addTrek(@RequestParam String title, @RequestParam String description, @RequestParam String continent,
+                          @RequestParam String region, @RequestParam String difficulty,
+                          @RequestParam("image")MultipartFile multipartFile ) throws IOException {
+        String fileName = StringUtils.cleanPath(Objects.requireNonNull(multipartFile.getOriginalFilename()));
+
         Continent continentToAdd;
         Region regionToAdd;
         Difficulty difficultyToAdd;
+
+
 
         Optional<Trek> trekToAddOpt = trekRepo.findByTitle(title);
         Optional<Continent> continentToAddOpt = continentRepo.findByTitle(title);
         Optional<Region> regionToAddOpt = regionRepo.findByTitle(title);
         Optional<Difficulty> difficultyToAddOpt = difficultyRepo.findByDifficulty(difficulty);
+
+
+
 
         if(continentToAddOpt.isEmpty()){
             continentToAdd = new Continent(title);
@@ -76,8 +91,12 @@ public class TrekController {
 
         if(trekToAddOpt.isEmpty()){
 
-            Trek trekToAdd = new Trek(title, description, continentToAdd, regionToAdd,difficultyToAdd);
+
+
+            Trek trekToAdd = new Trek(title, description, continentToAdd, regionToAdd,difficultyToAdd,fileName);
             trekRepo.save(trekToAdd);
+            String uploadDir = "trek/" + trekToAdd.getId();
+            FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         }
         return "redirect:/treks";
     }
