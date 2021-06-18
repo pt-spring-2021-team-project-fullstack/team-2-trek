@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>World Trekking - Difficulties</title>
+    <link rel="stylesheet" type="text/css" href="./css/difficultyStyle.css">
+</head>
+
+<body>
+    <div th:replace="header :: header"></div>
+    <div class="intro">
+        <h1 class="intro-title">Difficulty Types</h1>
+        <p class="intro-text">Regardless of your skill or experience level, we have a trek for you, ranging from easy
+            to difficult. No excuses! So pack your boots and join in for an amazing adventure, whether it's your first or hundredth trek. Challenge
+            yourself and make good friends along the way.</p>
+    </div>
+    <main>
+        <div th:each="difficulty: ${difficultyModel}">
+            <a th:href="@{/difficulty(id=${difficulty.id})}">
+                <img th:src="${difficulty.imageUrl}"></a>
+            <p th:text="${difficulty.title}"></p>
+        </div>
+    </main>
+</body>
+<div th:replace="footer :: footer"></div>
+</html>

@@ -50,7 +50,7 @@ public class TrekController {
         Optional<Trek> trekToAddOpt = trekRepo.findByTitle(title);
         Optional<Continent> continentToAddOpt = continentRepo.findByTitle(title);
         Optional<Region> regionToAddOpt = regionRepo.findByTitle(title);
-        Optional<Difficulty> difficultyToAddOpt = difficultyRepo.findByDifficulty(difficulty);
+        Optional<Difficulty> difficultyToAddOpt = difficultyRepo.findByTitle(title);
 
         if(continentToAddOpt.isEmpty()){
             continentToAdd = new Continent(title);
@@ -97,8 +97,8 @@ public class TrekController {
     }
 
     @GetMapping("difficulties/{difficulty}")
-    public String displaySingleDifficulty(@PathVariable String difficulty, Model model){
-        Optional<Difficulty> retrievedDifficulty = difficultyRepo.findByDifficulty(difficulty);
+    public String displaySingleDifficulty(@PathVariable String title, Model model){
+        Optional<Difficulty> retrievedDifficulty = difficultyRepo.findByTitle(title);
         model.addAttribute("difficultyModel", retrievedDifficulty.get());
         return "difficultyView";
     }

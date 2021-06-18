@@ -2,11 +2,11 @@ package com.team2.worldtrekking;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
 public class Trek {
-
 
     @Id
     @GeneratedValue

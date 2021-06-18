@@ -2,28 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>World Trekking - Difficulty Types</title>
+    <title>World Trekking - Difficulty</title>
     <link rel="stylesheet" type="text/css" href="./css/difficultyStyle.css">
 </head>
 
 <body>
     <div th:replace="header :: header"></div>
+    <div class="container">
+        <main>
+            <div th:each="difficulty: ${difficultyModel}">
+                <h1 th:text="${difficultyModel.title}"></h1>
+<!--                <h1 th:text="${trekModel.trek}"></h1>-->
+            </div>
 
-    <div class="intro">
-        Most Iconic Treks by difficulty types.
-        <p>Deciding the best trekking and most iconic treks by continents can be difficult and time consuming. Let us
-            help you narrow down your choices on the treks by continents. We have check them out ourselves and would
-            love
-            you to follow us and be inspired to put your boots on in joining us on the trail.</p>
+<!--            <div th:each="trek: ${trekModel}">-->
+<!--                <h2>-->
+<!--                    <a th:href="@@{/trek(id=${trek.id})}" th:text="${trek.title}"></a>-->
+<!--                </h2>-->
+<!--            </div>-->
+        </main>
     </div>
-
-
-    <main>
-        <div th:each="difficulty: ${difficultyModel}">
-            <a th:href="@{/difficulty(id=${difficulty.id})}"></a>
-            <p th:text="${difficulty.difficulty}"></p>
-        </div>
-    </main>
 
 
 </body>

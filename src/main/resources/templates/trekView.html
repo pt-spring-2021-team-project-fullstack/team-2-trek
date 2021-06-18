@@ -7,19 +7,19 @@
 </head>
 <body>
     <div th:replace="header :: header"></div>
-<div class="intro">
-    <main>
-        <h1 th:text="${trekModel.title}"></h1>
-        <div th:each="trek: ${trekModel}">
-            <a th:href="@{/trek(id=${trek.id})}">
-                <img th:src="${trek.imageUrl}"></a>
-        </div>
-        <h3>Price(USD): </h3>
-        <p th:text="${trekModel.price}"></p>
-        <h3>Description of the Trek:</h3>
-        <p th:text="${trekModel.description}"></p>
-    </main>
-</div>
+    <div class="intro">
+        <main>
+            <h1 th:text="${trekModel.title}"></h1>
+            <div th:each="trek: ${trekModel}">
+                <a th:href="@{/trek(id=${trek.id})}">
+                    <img th:src="${trek.imageUrl}"></a>
+            </div>
+            <h3>Price(USD): </h3>
+            <p th:text="${trekModel.price}"></p>
+            <h3>Description of the Trek:</h3>
+            <p th:text="${trekModel.description}"></p>
+        </main>
+    </div>
 </body>
 <div th:replace="footer :: footer"></div>
 </html>

@@ -72,6 +72,6 @@ h2 {
     background: rgba(0,0,0, .2);
 }
 
-#italics {
+.italics {
     font-style: italic;
 }
