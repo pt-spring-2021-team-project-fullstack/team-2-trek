@@ -10,4 +10,6 @@ public interface TrekRepository extends CrudRepository<Trek, Long> {
 
 //    Collection<Course> findByTopicsContains(Topic topic);
     Collection<Trek> findByDifficulty(Difficulty difficulty);
+
+    Collection<Trek> findByContinent(Continent continent);
 }

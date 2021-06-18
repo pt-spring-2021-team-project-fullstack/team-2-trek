@@ -2,30 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>World Trekking - Continents</title>
-    <link rel="stylesheet" type="text/css" href="./css/continentStyle.css">
+    <title>World Trekking - Single Trek</title>
 </head>
-
 <body>
-    <div th:replace="header :: header"></div>
 
+
+<div th:replace="header :: header"></div>
 <div class="intro">
-        Most Iconic Treks by Continent.
-        <p>Deciding the best trekking and most iconic treks by continents can be difficult and time consuming. Let us
-        help you narrow down your choices on the treks by continents. We have check them out ourselves and would love
-        you to follow us and be inspired to put your boots on in joining us on the trail.</p>
-            </div>
-    </header>
+    <main>
+        <div th:each="continent: ${continentModel}">
+            <h1 th:text="${continentModel.title}"></h1>
+        </div>
 
-        <main>
-            <div th:each="continent: ${continentModel}">
-                <a th:href="@{/continent(id=${continent.id})}">
-                    <img th:src="${continent.imageUrl}"></a>
-                <p th:text="${continent.title}"></p>
-            </div>
-        </main>
+        <div th:each="trek: ${trekModel}">
+            <h2 th:text="${trek.title}">
+
+            </h2>
+        </div>
+    </main>
 </div>
-
 </body>
 <div th:replace="footer :: footer"></div>
 </html>
+
