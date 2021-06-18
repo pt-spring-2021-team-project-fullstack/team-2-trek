@@ -36,6 +36,11 @@ public class TrekController {
         return "TrekView";
     }
 
+    @RequestMapping("/add-trek")
+    public String displayForm(Model model){
+        return "addTrekView";
+    }
+
     @PostMapping("/add-trek")
     public String addTrek(@RequestParam String title, @RequestParam String description,@RequestParam String continent, @RequestParam String region, @RequestParam String difficulty) {
         Continent continentToAdd;
