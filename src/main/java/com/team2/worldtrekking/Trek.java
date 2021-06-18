@@ -2,9 +2,6 @@ package com.team2.worldtrekking;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -15,12 +12,14 @@ public class Trek {
     @GeneratedValue
     private Long id;
     private String title;
-    private String difficulty;
+
     @Lob
     private String description;
     private String price;
     private String imageUrl;
 
+    @ManyToOne
+    private Difficulty difficulty;
     @ManyToOne
     private Continent continent;
     @ManyToOne
@@ -31,7 +30,7 @@ public class Trek {
         return title;
     }
 
-    public String getDifficulty() {
+    public Difficulty getDifficulty() {
         return difficulty;
     }
 
@@ -61,8 +60,8 @@ public class Trek {
 
     public Trek(){}
 
-    public Trek( String title, String difficulty, String description,
-                 String price, String imageUrl, Continent continent, Region regions/*, Region...regions*/){
+    public Trek( String title, Difficulty difficulty, String description,
+                 String price, String imageUrl, Continent continent, Region regions){
 
         this.title = title;
         this.difficulty = difficulty;
@@ -71,7 +70,6 @@ public class Trek {
         this.imageUrl = imageUrl;
         this.continent = continent;
         this.regions = regions;
-        /*this.regions = new ArrayList<>(Arrays.asList(regions));*/
 
     }
 

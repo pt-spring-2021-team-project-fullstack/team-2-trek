@@ -16,16 +16,15 @@
             love
             you to follow us and be inspired to put your boots on in joining us on the trail.</p>
     </div>
-    </header>
+
 
     <main>
         <div th:each="difficulty: ${difficultyModel}">
-            <a th:href="@{/difficulty(id=${difficulty.id})}">
-                <img th:src="${difficulty.imageUrl}"></a>
-            <p th:text="${difficulty.title}"></p>
+            <a th:href="@{/difficulty(id=${difficulty.id})}"></a>
+            <p th:text="${difficulty.difficulty}"></p>
         </div>
     </main>
-</div>
+
 
 </body>
 <div th:replace="footer :: footer"></div>

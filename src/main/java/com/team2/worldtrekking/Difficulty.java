@@ -3,6 +3,8 @@ package com.team2.worldtrekking;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -11,34 +13,30 @@ public class Difficulty {
     @GeneratedValue
     private Long id;
 
-    private String difficultyLevel;
-    private String description;
-    private String imageUrl;
+    private String difficulty;
 
-    public String getDifficultyLevel() {
-        return difficultyLevel;
+    @OneToMany(mappedBy="difficulty")
+    public Collection<Trek> treks;
+
+
+    public Collection<Trek> getTreks() {
+        return treks;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
 
     public Difficulty() {
-
     }
 
-    public Difficulty(String difficultyLevel, String description, String imageUrl) {
-        this.difficultyLevel = difficultyLevel;
-        this.description = description;
-        this.imageUrl = imageUrl;
+    public Difficulty(String difficulty) {
+        this.difficulty = difficulty;
     }
 
     @Override
