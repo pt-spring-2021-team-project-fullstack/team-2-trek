@@ -57,15 +57,33 @@ h1 {
 
 h2 {
     font-size: 1.5em;
-    text-shadow: 1px 1px #e1c8cd;
+    text-shadow: 1px 1px #404040;
 }
 
 .profile-text {
+    font-size: 1em;
     text-align: left;
+    color: white;
+    margin: 1em;
+    text-shadow: .09em .09em #000000;
+
+    /*background: inherit;*/
+    /*background-clip: text;*/
+    /*color: transparent*/
+    /*filter: invert(1) grayscale(1) contrast(9);*/
+    /*filter: blur(1em);*/
+}
+
+.profile {
+    /*background-color: blue;
+    opacity:0.2;*/
+    background: rgba(0,0,0, .2);
+    /*filter: blur(1em);*/
+    /*backdrop-filter: blur(1em);*/
     /*background: inherit;
     background-clip: text;
-    color: transparent;
-    filter: invert(1);*/
+    color: transparent
+    filter: invert(1) grayscale(1) contrast(9);*/
 }
 
 #italics {
