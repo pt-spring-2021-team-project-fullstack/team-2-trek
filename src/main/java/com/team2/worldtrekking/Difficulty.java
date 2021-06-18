@@ -12,11 +12,11 @@ public class Difficulty {
     @Id
     @GeneratedValue
     private Long id;
-
     private String difficulty;
 
     @OneToMany(mappedBy="difficulty")
     public Collection<Trek> treks;
+
 
 
     public Collection<Trek> getTreks() {
@@ -31,9 +31,7 @@ public class Difficulty {
         return id;
     }
 
-
-    public Difficulty() {
-    }
+    public Difficulty() {}
 
     public Difficulty(String difficulty) {
         this.difficulty = difficulty;

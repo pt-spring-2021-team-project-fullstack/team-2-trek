@@ -13,6 +13,7 @@ public class Trek {
     private Long id;
     private String title;
 
+
     @Lob
     private String description;
     private String price;
@@ -23,7 +24,16 @@ public class Trek {
     @ManyToOne
     private Continent continent;
     @ManyToOne
-    private Region regions;
+    private Region region;
+
+
+    public Trek(String title, String description, Continent continent, Region region, Difficulty difficulty) {
+        this.title = title;
+        this.description = description;
+        this.continent = continent;
+        this.region = region;
+        this.difficulty = difficulty;
+    }
 
 
     public String getTitle() {
@@ -35,7 +45,7 @@ public class Trek {
     }
 
     public Region getRegion() {
-        return regions;
+        return region;
     }
 
     public Long getId() {
@@ -60,8 +70,9 @@ public class Trek {
 
     public Trek(){}
 
+
     public Trek( String title, Difficulty difficulty, String description,
-                 String price, String imageUrl, Continent continent, Region regions){
+                 String price, String imageUrl, Continent continent, Region region){
 
         this.title = title;
         this.difficulty = difficulty;
@@ -69,7 +80,7 @@ public class Trek {
         this.price = price;
         this.imageUrl = imageUrl;
         this.continent = continent;
-        this.regions = regions;
+        this.region = region;
 
     }
 

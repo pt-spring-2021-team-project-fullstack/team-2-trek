@@ -20,6 +20,10 @@ public class Continent {
     @OneToMany(mappedBy="continent")
     public Collection<Region> regions;
 
+    public Continent(String title) {
+        this.title = title;
+    }
+
     public Collection<Region> getRegion() {
         return regions;
     }
@@ -41,13 +45,11 @@ public class Continent {
     }
 
 
-/*    public String getRegion() {
-        return region;
-    }*/
+
 
 public Continent(){}
 
-    public Continent(String title, String imageUrl, Region... regions){
+    public Continent(String title, String imageUrl){
         this.title = title;
         this.imageUrl = imageUrl;
     }

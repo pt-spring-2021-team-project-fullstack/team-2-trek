@@ -28,11 +28,23 @@
     </header>
 
     <main>
+        <form action="/add-trek" method="POST">
+            <input type="text" name="title" placeholder="Enter Title of the trek">
+            <input type="text" name="description" placeholder="Enter brief description">
+            <input type="text" name="continent" placeholder="Enter continent">
+            <input type="text" name="region" placeholder="Enter region">
+            <input type="text" name="difficulty" placeholder="Enter difficulty">
+            <input type="text" name="price" placeholder="Enter price">
+            <input type="text" name="imageUrl" placeholder="Enter url for image">
+
+            <button type="submit">Add a Trek</button>
+        </form>
         <div th:each="trek: ${trekModel}">
             <a th:href="@{/trek(id=${trek.id})}">
                 <img th:src="${trek.imageUrl}"></a>
             <p th:text="${trek.title}"></p>
         </div>
+
     </main>
 
 </div>
