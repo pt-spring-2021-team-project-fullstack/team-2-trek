@@ -19,6 +19,9 @@ public class TrekController {
     @Resource
     private RegionRepository regionRepo;
 
+    @Resource
+    private DifficultyRepository difficultyRepo;
+
 //    @Resource
 //    private difficultyRepository difficultyRepo;
 
@@ -37,49 +40,44 @@ public class TrekController {
     }
 
     @PostMapping("/add-trek")
-//    public String addTrek(@RequestParam String title, String description, String continent, String region,
-//                          String difficulty) {
-    public String addTrek(@RequestParam String title, String description, String continent, String region) {
+    public String addTrek(@RequestParam String title, @RequestParam String description,@RequestParam String continent, @RequestParam String region, @RequestParam String difficulty) {
         Continent continentToAdd;
         Region regionToAdd;
-//        Difficulty difficultyToAdd;
+        Difficulty difficultyToAdd;
 
         Optional<Continent> continentToAddOpt = continentRepo.findByTitle(title);
         Optional<Region> regionToAddOpt = regionRepo.findByTitle(title);
-//        Optional<Difficulty> difficultyToAddOpt = difficultyRepo.findByMaterialType();
+        Optional<Difficulty> difficultyToAddOpt = difficultyRepo.findByDifficulty(difficulty);
 
         if(continentToAddOpt.isEmpty()){
-//            continentToAdd = new Continent(title, imageUrl);
             continentToAdd = new Continent(title);
             continentRepo.save(continentToAdd);
         } else {
             continentToAdd = continentToAddOpt.get();
         }
 
-        if(continentToAddOpt.isEmpty()){
-//            continentToAdd = new Continent(title, imageUrl);
-            continentToAdd = new Continent(title);
-            continentRepo.save(continentToAdd);
+        if(regionToAddOpt.isEmpty()){
+            regionToAdd = new Region(title);
+            regionRepo.save(regionToAdd);
         } else {
-            continentToAdd = continentToAddOpt.get();
+            regionToAdd = regionToAddOpt.get();
         }
 
-//        if(difficultyToAddOpt.isEmpty()){
-//            difficultyToAdd = new Difficulty(difficultyLevel);
-//            continentRepo.save(continentToAdd);
-//        } else {
-//            continentToAdd = continentToAddOpt.get();
-//        }
+        if(difficultyToAddOpt.isEmpty()){
+            difficultyToAdd = new Difficulty(difficulty);
+            difficultyRepo.save(difficultyToAdd);
+        } else {
+            difficultyToAdd = difficultyToAddOpt.get();
+        }
 
         Optional<Trek> trekToAddOpt = trekRepo.findByTitle(title);
 
         if(trekToAddOpt.isEmpty()){
-//            Trek trekToAdd = new Trek(title, difficulty, description, price, imageUrl, continentToAdd, regionToAdd);
-//            Trek trekToAdd = new Trek(title, description, price, imageUrl, continentToAdd, regionToAdd);
-            Trek trekToAdd = new Trek(title, description, continentToAdd, regionToAdd);
+
+            Trek trekToAdd = new Trek(title, description, continentToAdd, regionToAdd,difficultyToAdd);
             trekRepo.save(trekToAdd);
         }
-        return "redirect:/paper-plates/";
+        return "redirect:/treks";
     }
 
     @GetMapping("/continents/{title}")

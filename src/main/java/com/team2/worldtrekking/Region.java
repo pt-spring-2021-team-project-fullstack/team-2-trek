@@ -19,14 +19,9 @@ public class Region {
     @ManyToOne
     private Continent continent;
 
-/*    @OneToMany(mappedBy = "region", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    public Collection<Trek> trek;
-
-    public Collection<Trek> getTreks() {
-        return trek;
-    }*/
-
-    /*public Collection<Region> getRegions() {return regions;}*/
+    public Region(String title) {
+        this.title = title;
+    }
 
     public Long getId() {
         return id;
@@ -50,7 +45,6 @@ public class Region {
         this.title = title;
         this.continent = continent;
         this.imageUrl = imageUrl;
-        /*this.treks = new ArrayList<>(Arrays.asList(treks));*/
     }
 
     @Override
