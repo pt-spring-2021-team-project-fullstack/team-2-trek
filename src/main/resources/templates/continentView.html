@@ -15,9 +15,8 @@
         </div>
 
         <div th:each="trek: ${trekModel}">
-            <h2>
-                <a th:href="@{/trek(id=${trek.id})}" th:text="${trek.title}"></a></h2>
-            <img th:src="${trek.imageUrl}">
+            <h2><a th:href="@{/trek(id=${trek.id})}" th:text="${trek.title}"></a></h2>
+            <a th:href="@{/trek(id=${trek.id})}"><img th:src="${trek.imageUrl}"></a>
         </div>
     </main>
 </div>
